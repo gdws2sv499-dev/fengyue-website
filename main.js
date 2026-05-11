@@ -92,7 +92,7 @@ function crossfadeHeroTo(filter) {
   });
 
   heroFadeTimeout = setTimeout(() => {
-    // 阶段2：切换到新背景类，新图淡入（opacity 0→1，0.5s）
+    // 阶段2：切换到新背景类，新图淡入（opacity 0→1，1s）
     if (isAll) {
       pageHero.classList.add('has-bg');
     } else {
@@ -100,7 +100,7 @@ function crossfadeHeroTo(filter) {
     }
     pageHero.classList.remove('hero-fading-out');
     heroFadeTimeout = null;
-  }, 500);
+  }, 1000);
 }
 
 if (filterBtns.length && productCards.length) {
