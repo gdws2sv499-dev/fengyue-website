@@ -94,9 +94,19 @@ function switchHeroBg(filter) {
 
   // 动画结束后交换层
   setTimeout(() => {
-    bgCurrent.className = bgNext.className;
-    bgCurrent.classList.remove('fading');
+    // 提取 bgNext 的背景类（has-bg 或 hero-bg-xxx）
+    const bgClass = Array.from(bgNext.classList)
+      .find(cls => cls === 'has-bg' || cls.startsWith('hero-bg-'));
+    
+    // 重置 bgNext
     bgNext.className = 'page-hero-bg bg-next';
+    
+    // bgCurrent 恢复为可显示状态
+    bgCurrent.className = 'page-hero-bg bg-current';
+    if (bgClass) {
+      bgCurrent.classList.add(bgClass);
+    }
+    
     isTransitioning = false;
   }, TRANSITION_DURATION);
 }
