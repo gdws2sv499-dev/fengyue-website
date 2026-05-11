@@ -88,30 +88,30 @@ function switchHeroBg(filter) {
   bgNext.className = 'page-hero-bg bg-next';
   bgNext.classList.add(targetClass);
 
-  // 强制浏览器重绘，确保过渡动画正确触发
-  void bgNext.offsetWidth;
+  // 下一帧触发动画
+  requestAnimationFrame(() => {
+    // 旧图淡出 + 新图淡入
+    bgCurrent.classList.add('fading');
+    bgNext.classList.add('fading');
 
-  // 触发动画
-  bgCurrent.classList.add('fading');
-  bgNext.classList.add('fading');
-
-  // 动画结束后交换层
-  setTimeout(() => {
-    // 提取 bgNext 的背景类（has-bg 或 hero-bg-xxx）
-    const bgClass = Array.from(bgNext.classList)
-      .find(cls => cls === 'has-bg' || cls.startsWith('hero-bg-'));
-    
-    // 重置 bgNext
-    bgNext.className = 'page-hero-bg bg-next';
-    
-    // bgCurrent 恢复为可显示状态
-    bgCurrent.className = 'page-hero-bg bg-current';
-    if (bgClass) {
-      bgCurrent.classList.add(bgClass);
-    }
-    
-    isTransitioning = false;
-  }, TRANSITION_DURATION);
+    // 动画结束后交换层
+    setTimeout(() => {
+      // 提取 bgNext 的背景类
+      const bgClass = Array.from(bgNext.classList)
+        .find(cls => cls === 'has-bg' || cls.startsWith('hero-bg-'));
+      
+      // 重置 bgNext（隐藏）
+      bgNext.className = 'page-hero-bg bg-next';
+      
+      // bgCurrent 立即变成新背景（无过渡，瞬间可见）
+      bgCurrent.className = 'page-hero-bg bg-current';
+      if (bgClass) {
+        bgCurrent.classList.add(bgClass);
+      }
+      
+      isTransitioning = false;
+    }, TRANSITION_DURATION);
+  });
 }
 
 if (filterBtns.length && productCards.length && bgCurrent) {
