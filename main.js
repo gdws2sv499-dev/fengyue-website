@@ -91,17 +91,6 @@ if (filterBtns.length && productCards.length && bgCurrent) {
   }
 
   filterBtns.forEach(btn => {
-    // 鼠标悬停：切换到该按钮的背景
-    btn.addEventListener('mouseenter', () => {
-      const f = btn.dataset.filter;
-      switchHeroBg(f);
-    });
-
-    // 鼠标离开：恢复到当前选中的背景
-    btn.addEventListener('mouseleave', () => {
-      switchHeroBg(currentFilter);
-    });
-
     // 点击：切换筛选 + 更新背景 + 更新 currentFilter
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
