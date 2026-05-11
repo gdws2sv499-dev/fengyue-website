@@ -61,7 +61,7 @@ ul, ol { list-style: none; }
   transition: background var(--transition), box-shadow var(--transition), backdrop-filter var(--transition);
 }
 .nav.scrolled {
-  background: rgba(10,10,10,.85);
+  background: rgba(10,10,10,.5);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   box-shadow: 0 1px 0 var(--border);
