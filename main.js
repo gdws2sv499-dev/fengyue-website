@@ -60,27 +60,45 @@ if (fadeEls.length) {
 const filterBtns = document.querySelectorAll('.filter-btn');
 const productCards = document.querySelectorAll('#productsGrid .product-card');
 const bgCurrent = document.getElementById('bgCurrent');
+const bgNext = document.getElementById('bgNext');
 
 // 追踪当前选中的 filter
 let currentFilter = 'all';
+let isTransitioning = false;
+const TRANSITION_DURATION = 500; // 淡入淡出时长
 
 /**
- * 直接切换背景（无过渡效果）
+ * 淡入淡出切换背景
  */
 function switchHeroBg(filter) {
-  if (!bgCurrent) return;
+  if (!bgCurrent || !bgNext) return;
+  if (isTransitioning) return;
 
   const isAll = filter === 'all';
-  
-  // 移除旧的背景类
-  bgCurrent.className = 'page-hero-bg bg-current';
-  
-  // 添加新的背景类
-  if (isAll) {
-    bgCurrent.classList.add('has-bg');
-  } else {
-    bgCurrent.classList.add('hero-bg-' + filter);
-  }
+  const targetClass = isAll ? 'has-bg' : 'hero-bg-' + filter;
+
+  // 检查是否已是目标背景
+  const currentBgClass = Array.from(bgCurrent.classList)
+    .find(cls => cls === 'has-bg' || cls.startsWith('hero-bg-'));
+  if (currentBgClass === targetClass) return;
+
+  isTransitioning = true;
+
+  // 设置 bgNext 为新背景
+  bgNext.className = 'page-hero-bg bg-next';
+  bgNext.classList.add(targetClass);
+
+  // 触发动画
+  bgCurrent.classList.add('fading');
+  bgNext.classList.add('fading');
+
+  // 动画结束后交换层
+  setTimeout(() => {
+    bgCurrent.className = bgNext.className;
+    bgCurrent.classList.remove('fading');
+    bgNext.className = 'page-hero-bg bg-next';
+    isTransitioning = false;
+  }, TRANSITION_DURATION);
 }
 
 if (filterBtns.length && productCards.length && bgCurrent) {
