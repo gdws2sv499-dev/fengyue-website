@@ -88,6 +88,9 @@ function switchHeroBg(filter) {
   bgNext.className = 'page-hero-bg bg-next';
   bgNext.classList.add(targetClass);
 
+  // 强制浏览器重绘，确保过渡动画正确触发
+  void bgNext.offsetWidth;
+
   // 触发动画
   bgCurrent.classList.add('fading');
   bgNext.classList.add('fading');
