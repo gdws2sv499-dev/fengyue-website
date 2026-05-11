@@ -1204,7 +1204,7 @@ ul, ol { list-style: none; }
   margin-bottom: 48px;
 }
 .filter-btn {
-  padding: 8px 16px;
+  padding: 8px 8px;
   border: 1px solid var(--border);
   background: transparent;
   color: var(--text2);
@@ -1213,7 +1213,7 @@ ul, ol { list-style: none; }
   border-radius: 999px;
   cursor: pointer;
   transition: all var(--transition);
-  min-width: 90px;
+  width: 100px;
   text-align: center;
 }
 .filter-btn:hover {
@@ -1633,7 +1633,7 @@ ul, ol { list-style: none; }
   .about-cta { padding: 48px 24px; }
   .page-hero { min-height: 45vh; padding-bottom: 60px; }
   .filter-bar { gap: 6px; }
-  .filter-btn { padding: 6px 14px; font-size: .78rem; }
+  .filter-btn { padding: 6px 4px; font-size: .78rem; width: 90px; }
   .timeline-item { grid-template-columns: 1fr; }
   .timeline-item:nth-child(odd) .timeline-content,
   .timeline-item:nth-child(even) .timeline-content {
