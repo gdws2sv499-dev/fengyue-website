@@ -60,60 +60,22 @@ if (fadeEls.length) {
 const filterBtns = document.querySelectorAll('.filter-btn');
 const productCards = document.querySelectorAll('#productsGrid .product-card');
 const bgCurrent = document.getElementById('bgCurrent');
-const bgNext = document.getElementById('bgNext');
 
 // 追踪当前选中的 filter
 let currentFilter = 'all';
-let isTransitioning = false;
 
 /**
- * 淡入淡出切换背景
+ * 直接切换背景（无过渡效果）
  */
 function switchHeroBg(filter) {
-  if (!bgCurrent || !bgNext) return;
-  if (isTransitioning) return;
+  if (!bgCurrent) return;
 
   const isAll = filter === 'all';
   const targetClass = isAll ? 'has-bg' : 'hero-bg-' + filter;
 
-  // 检查是否已是目标背景
-  const currentBgClass = Array.from(bgCurrent.classList)
-    .find(cls => cls === 'has-bg' || cls.startsWith('hero-bg-'));
-  if (currentBgClass === targetClass) return;
-
-  isTransitioning = true;
-
-  // 设置 bgNext 为新背景
-  bgNext.className = 'page-hero-bg bg-next';
-  bgNext.classList.add(targetClass);
-
-  // 下一帧触发动画
-  requestAnimationFrame(() => {
-    // 旧图淡出 + 新图淡入
-    bgCurrent.classList.add('fading');
-    bgNext.classList.add('fading');
-
-    // 监听动画结束
-    bgNext.addEventListener('transitionend', function onEnd() {
-      bgNext.removeEventListener('transitionend', onEnd);
-      
-      // 提取 bgNext 的背景类
-      const bgClass = Array.from(bgNext.classList)
-        .find(cls => cls === 'has-bg' || cls.startsWith('hero-bg-'));
-      
-      // 重置 bgNext（隐藏）
-      bgNext.className = 'page-hero-bg bg-next';
-      
-      // bgCurrent 获得新背景（移除 fading，立即可见）
-      bgCurrent.classList.remove('fading');
-      bgCurrent.className = 'page-hero-bg bg-current';
-      if (bgClass) {
-        bgCurrent.classList.add(bgClass);
-      }
-      
-      isTransitioning = false;
-    });
-  });
+  // 移除旧的背景类，添加新的背景类
+  bgCurrent.className = 'page-hero-bg bg-current';
+  bgCurrent.classList.add(targetClass);
 }
 
 if (filterBtns.length && productCards.length && bgCurrent) {
