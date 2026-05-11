@@ -65,7 +65,7 @@ const bgNext = document.getElementById('bgNext');
 // 追踪当前选中的 filter
 let currentFilter = 'all';
 let isTransitioning = false;
-const TRANSITION_DURATION = 500; // 淡入淡出时长
+const TRANSITION_DURATION = 1000; // 淡入淡出时长
 
 /**
  * 淡入淡出切换背景
