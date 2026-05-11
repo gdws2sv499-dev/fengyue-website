@@ -65,6 +65,9 @@ const bgNext = document.getElementById('bgNext');
 let isTransitioning = false;
 const TRANSITION_DURATION = 2000; // 2秒总时长
 
+// 追踪当前选中的 filter（用于鼠标离开后恢复）
+let currentFilter = 'all';
+
 /**
  * 交叉淡入淡出切换背景图
  * 原理：双层背景同时过渡，旧图淡出 + 新图淡入，全程交叉无黑屏
@@ -74,11 +77,11 @@ function crossfadeHeroTo(filter) {
   if (isTransitioning) return;
 
   const isAll = filter === 'all';
-  
-  // 判断是否已经显示目标背景
+  const targetClass = isAll ? 'has-bg' : 'hero-bg-' + filter;
+
+  // 判断是否已经是目标背景
   const currentBgClass = Array.from(bgCurrent.classList)
     .find(cls => cls === 'has-bg' || cls.startsWith('hero-bg-'));
-  const targetClass = isAll ? 'has-bg' : 'hero-bg-' + filter;
   if (currentBgClass === targetClass) return;
 
   // 开始过渡
@@ -111,28 +114,31 @@ function crossfadeHeroTo(filter) {
 }
 
 if (filterBtns.length && productCards.length && bgCurrent) {
+  // 初始化 currentFilter 为当前 active 按钮的 filter
+  const initActive = document.querySelector('.filter-btn.active');
+  if (initActive) {
+    currentFilter = initActive.dataset.filter;
+  }
+
   filterBtns.forEach(btn => {
     // 鼠标悬停：预览背景切换
     btn.addEventListener('mouseenter', () => {
       const f = btn.dataset.filter;
-      if (f === 'all') return;
       crossfadeHeroTo(f);
     });
 
-    // 鼠标离开：恢复 active 背景
+    // 鼠标离开：恢复到当前选中的背景
     btn.addEventListener('mouseleave', () => {
-      const activeBtn = document.querySelector('.filter-btn.active');
-      if (!activeBtn) return;
-      const f = activeBtn.dataset.filter;
-      crossfadeHeroTo(f);
+      crossfadeHeroTo(currentFilter);
     });
 
-    // 点击：切换筛选 + 更新背景
+    // 点击：切换筛选 + 更新背景 + 更新 currentFilter
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
       const filter = btn.dataset.filter;
+      currentFilter = filter; // 更新当前选中状态
 
       // 筛选产品卡片
       productCards.forEach(card => {
