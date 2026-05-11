@@ -65,7 +65,6 @@ const bgNext = document.getElementById('bgNext');
 // 追踪当前选中的 filter
 let currentFilter = 'all';
 let isTransitioning = false;
-const TRANSITION_DURATION = 1000; // 淡入淡出时长
 
 /**
  * 淡入淡出切换背景
@@ -94,8 +93,10 @@ function switchHeroBg(filter) {
     bgCurrent.classList.add('fading');
     bgNext.classList.add('fading');
 
-    // 动画结束后交换层
-    setTimeout(() => {
+    // 监听动画结束
+    bgNext.addEventListener('transitionend', function onEnd() {
+      bgNext.removeEventListener('transitionend', onEnd);
+      
       // 提取 bgNext 的背景类
       const bgClass = Array.from(bgNext.classList)
         .find(cls => cls === 'has-bg' || cls.startsWith('hero-bg-'));
@@ -103,14 +104,15 @@ function switchHeroBg(filter) {
       // 重置 bgNext（隐藏）
       bgNext.className = 'page-hero-bg bg-next';
       
-      // bgCurrent 立即变成新背景（无过渡，瞬间可见）
+      // bgCurrent 获得新背景（移除 fading，立即可见）
+      bgCurrent.classList.remove('fading');
       bgCurrent.className = 'page-hero-bg bg-current';
       if (bgClass) {
         bgCurrent.classList.add(bgClass);
       }
       
       isTransitioning = false;
-    }, TRANSITION_DURATION);
+    });
   });
 }
 
