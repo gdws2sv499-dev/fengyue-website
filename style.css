@@ -955,26 +955,30 @@ ul, ol { list-style: none; }
 
 /* ── 产品页背景图切换核心样式 ──
 
-   方案：双层叠加
-   - ::before = 始终可见，承载当前背景图（包含渐变遮罩）
-   - ::after  = 淡入层，切换时 opacity 从 0→1（0.8s 缓动）
-   
+   方案：双层交叉淡入淡出
+   - bg-current (z-index: 0) = 当前背景层
+   - bg-next (z-index: 0)     = 下一背景层
+   - overlay (z-index: 1)     = 渐变遮罩层
+   - content (z-index: 2)      = 内容层
+
    切换流程（由 JS 控制）：
-   1. 添加 hero-fading-out 类 → 旧 ::before 渐隐
-   2. 650ms 后移除旧类、添加新类 → 新 ::before 渐显
+   1. 给 bg-next 设置新背景图 class
+   2. 两层同时开始过渡：bg-current opacity 1→0，bg-next opacity 0→1
+   3. 动画结束后（2s），交换类名，bg-next 恢复 opacity 1
 */
 
-.page-hero::before {
-  content: '';
+/* ── 背景层基础样式 ── */
+.page-hero-bg {
   position: absolute;
-  top:0; left:0; right:0; bottom:0;
+  top: 0; left: 0; right: 0; bottom: 0;
   z-index: 0;
   background: #000;
-  transition: opacity 1s ease;
+  transition: opacity 2s ease;
 }
 
 /* ── 默认状态：无背景图，只有网格纹理 ── */
-.page-hero:not(.has-bg):not([class*="hero-bg-"])::before {
+.page-hero-bg.bg-current:not(.has-bg):not([class*="hero-bg-"]),
+.page-hero-bg.bg-next:not(.has-bg):not([class*="hero-bg-"]) {
   background-image:
     linear-gradient(rgba(195,214,0,.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(195,214,0,.03) 1px, transparent 1px),
@@ -983,26 +987,36 @@ ul, ol { list-style: none; }
 }
 
 /* ── 全部产品背景 ── */
-.page-hero.has-bg::before {
-  background: url('slides/slide-hero-all.jpg') center center / cover no-repeat;
-}
+.page-hero-bg.has-bg { background: url('slides/slide-hero-all.jpg') center center / cover no-repeat; }
 
 /* ── 各系列背景 ── */
-.page-hero.hero-bg-envelope::before   { background: url('series-imgs/信封.png') center center / cover no-repeat; }
-.page-hero.hero-bg-hood::before       { background: url('series-imgs/戴帽.png') center center / cover no-repeat; }
-.page-hero.hero-bg-mummy::before      { background: url('series-imgs/妈咪.png') center center / cover no-repeat; }
-.page-hero.hero-bg-lightweight::before { background: url('series-imgs/轻盈.png') center center / cover no-repeat; }
-.page-hero.hero-bg-military::before   { background: url('series-imgs/行军.png') center center / cover no-repeat; }
-.page-hero.hero-bg-twoperson::before  { background: url('series-imgs/双人.png') center center / cover no-repeat; }
-.page-hero.hero-bg-down::before       { background: url('series-imgs/羽绒.png') center center / cover no-repeat; }
-.page-hero.hero-bg-kids::before       { background: url('series-imgs/儿童.png') center center / cover no-repeat; }
-.page-hero.hero-bg-special::before    { background: url('series-imgs/特殊.png') center center / cover no-repeat; }
+.page-hero-bg.hero-bg-envelope   { background: url('series-imgs/信封.png') center center / cover no-repeat; }
+.page-hero-bg.hero-bg-hood       { background: url('series-imgs/戴帽.png') center center / cover no-repeat; }
+.page-hero-bg.hero-bg-mummy      { background: url('series-imgs/妈咪.png') center center / cover no-repeat; }
+.page-hero-bg.hero-bg-lightweight { background: url('series-imgs/轻盈.png') center center / cover no-repeat; }
+.page-hero-bg.hero-bg-military   { background: url('series-imgs/行军.png') center center / cover no-repeat; }
+.page-hero-bg.hero-bg-twoperson  { background: url('series-imgs/双人.png') center center / cover no-repeat; }
+.page-hero-bg.hero-bg-down       { background: url('series-imgs/羽绒.png') center center / cover no-repeat; }
+.page-hero-bg.hero-bg-kids       { background: url('series-imgs/儿童.png') center center / cover no-repeat; }
+.page-hero-bg.hero-bg-special     { background: url('series-imgs/特殊.png') center center / cover no-repeat; }
 
-/* ── 渐变遮罩层（::after）始终在最上层 ── */
-.page-hero::after {
-  content: '';
+/* ── 当前背景层：切换时淡出 ── */
+.page-hero-bg.bg-current.fading {
+  opacity: 0;
+}
+
+/* ── 下一背景层：切换时淡入 ── */
+.page-hero-bg.bg-next {
+  opacity: 0;
+}
+.page-hero-bg.bg-next.fading {
+  opacity: 1;
+}
+
+/* ── 渐变遮罩层 ── */
+.page-hero-overlay {
   position: absolute;
-  top:0; left:0; right:0; bottom:0;
+  top: 0; left: 0; right: 0; bottom: 0;
   z-index: 1;
   background: linear-gradient(to bottom,
     rgba(0,0,0,.35) 0%,
@@ -1010,11 +1024,6 @@ ul, ol { list-style: none; }
     rgba(0,0,0,.55) 80%,
     rgba(0,0,0,.85) 100%);
   pointer-events: none;
-}
-
-/* ── 切换时旧图渐隐 ── */
-.page-hero.hero-fading-out::before {
-  opacity: 0;
 }
 
 /* ── 内容层 ── */
@@ -1619,6 +1628,7 @@ ul, ol { list-style: none; }
   .stat-num { font-size: 2.5rem; }
   .oem-visual { grid-template-columns: 1fr; }
   .certs-grid { grid-template-columns: 1fr; }
+  .about-cta { padding: 48px 24px; }
   .page-hero { min-height: 45vh; padding-bottom: 60px; }
   .filter-bar { gap: 6px; }
   .filter-btn { padding: 6px 14px; font-size: .78rem; }

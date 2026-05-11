@@ -40,7 +40,14 @@
   </div>
 
   <!-- ── 页面英雄区 ── -->
-  <section class="page-hero">
+  <section class="page-hero" id="pageHero">
+    <!-- 当前背景层 -->
+    <div class="page-hero-bg bg-current has-bg" id="bgCurrent"></div>
+    <!-- 下一背景层（切换时淡入） -->
+    <div class="page-hero-bg bg-next" id="bgNext"></div>
+    <!-- 渐变遮罩层 -->
+    <div class="page-hero-overlay"></div>
+    <!-- 内容层 -->
     <div class="container">
       <div class="page-hero-content">
         <div class="page-hero-eyebrow" data-i18n="products_eyebrow">产品中心</div>
