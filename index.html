@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr" data-title-key="page_title_index">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>峰悦户外 · 专业睡袋制造商</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── 导航 ── -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="logo-small.png" alt="峰悦户外 FENGYUE" class="nav-logo-img">
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="active" data-i18n="nav_home">首页</a>
+      <a href="products.html" data-i18n="nav_products">产品中心</a>
+      <a href="about.html" data-i18n="nav_about">关于我们</a>
+      <a href="contact.html" data-i18n="nav_contact">联系我们</a>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="zh" onclick="switchLang('zh')">中</button>
+        <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+      </div>
+      <a href="contact.html" class="nav-cta" data-i18n="nav_cta">立即咨询</a>
+    </div>
+    <div class="nav-toggle" id="navToggle">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html" class="active" data-i18n="nav_home">首页</a>
+    <a href="products.html" data-i18n="nav_products">产品中心</a>
+    <a href="about.html" data-i18n="nav_about">关于我们</a>
+    <a href="contact.html" data-i18n="nav_contact">联系我们</a>
+    <div class="lang-switcher lang-switcher-mobile">
+      <button class="lang-btn active" data-lang="zh" onclick="switchLang('zh')">中</button>
+      <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+    </div>
+  </div>
+
+  <!-- ── 英雄区 ── -->
+  <section class="hero">
+    <div class="hero-slides" id="heroSlides">
+      <div class="hero-slide active" style="background-image: url('slides/slide-01.png')"></div>
+      <div class="hero-slide" style="background-image: url('slides/slide-02.png')"></div>
+      <div class="hero-slide" style="background-image: url('slides/slide-03.png')"></div>
+      <div class="hero-slide" style="background-image: url('slides/slide-04.png')"></div>
+      <div class="hero-slide" style="background-image: url('slides/slide-05.png')"></div>
+      <div class="hero-slide" style="background-image: url('slides/slide-06.png')"></div>
+      <div class="hero-slide" style="background-image: url('slides/slide-07.png')"></div>
+      <div class="hero-slide" style="background-image: url('slides/slide-08.png')"></div>
+      <div class="hero-slide" style="background-image: url('slides/slide-09.png')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-in">
+      <div class="hero-eyebrow">
+        <img src="logo-small.png" alt="峰悦户外 FENGYUE" class="hero-logo-img">
+      </div>
+      <img src="slogan.png" alt="极限低温 舒适入眠" class="hero-slogan-img">
+      <p class="hero-subtitle text-center hero-subtitle-green" data-i18n="hero_subtitle">
+        从家庭聚会到雪山冒险，每一款睡袋都是对环境的完美诠释
+      </p>
+      <div class="hero-actions">
+        <a href="products.html" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          <span data-i18n="hero_btn_explore">探索产品</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-dots" id="heroDots"></div>
+  </section>
+
+  <!-- ── 页脚 ── -->
+  <footer class="footer">
+    <div class="container">
+      <!-- 页脚网格：联系方式 | 二维码 -->
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4 data-i18n="footer_contact_h">联系方式</h4>
+          <div class="footer-contact-item">
+            <span class="ico">📞</span>
+            <span>0086-511-86451188</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="ico">✉️</span>
+            <span>506466936@qq.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="ico">📍</span>
+            <span data-i18n="footer_address">江苏省丹阳市运河镇</span>
+          </div>
+        </div>
+        <div class="footer-brand">
+          <div class="footer-qr">
+            <div class="footer-qr-item">
+              <img src="contacts/whatsapp.png" alt="WhatsApp">
+              <span>WhatsApp</span>
+            </div>
+            <div class="footer-qr-item">
+              <img src="contacts/wechat.png" alt="微信">
+              <span>微信</span>
+            </div>
+            <div class="footer-qr-item">
+              <img src="contacts/contact.png" alt="联系方式">
+              <span>联系方式</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 全宽底栏：版权 + 隐私政策 -->
+      <div class="footer-bottom">
+        <p class="footer-copy" data-i18n="footer_copy">© 2024 江苏峰悦户外用品有限公司 版权所有</p>
+        <div class="footer-legal">
+          <a href="#" data-i18n="footer_privacy">隐私政策</a>
+          <a href="#" data-i18n="footer_terms">服务条款</a>
+          <a href="#" data-i18n="footer_icp">苏ICP备XXXXXXXX号</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr" data-title-key="page_title_about">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于我们 · 峰悦户外</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── 导航 ── -->
+  <nav class="nav scrolled" id="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="logo-small.png" alt="峰悦户外 FENGYUE" class="nav-logo-img">
+    </a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav_home">首页</a>
+      <a href="products.html" data-i18n="nav_products">产品中心</a>
+      <a href="about.html" class="active" data-i18n="nav_about">关于我们</a>
+      <a href="contact.html" data-i18n="nav_contact">联系我们</a>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="zh" onclick="switchLang('zh')">中</button>
+        <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+      </div>
+      <a href="contact.html" class="nav-cta" data-i18n="nav_cta">立即咨询</a>
+    </div>
+    <div class="nav-toggle" id="navToggle">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html" data-i18n="nav_home">首页</a>
+    <a href="products.html" data-i18n="nav_products">产品中心</a>
+    <a href="about.html" class="active" data-i18n="nav_about">关于我们</a>
+    <a href="contact.html" data-i18n="nav_contact">联系我们</a>
+    <div class="lang-switcher lang-switcher-mobile">
+      <button class="lang-btn active" data-lang="zh" onclick="switchLang('zh')">中</button>
+      <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+    </div>
+  </div>
+
+  <!-- ── 页面英雄区 ── -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="page-hero-eyebrow" data-i18n="about_eyebrow">关于峰悦</div>
+        <h1 class="page-hero-title"><span data-i18n="about_h1_a">为极限而生</span><br><span class="hl" data-i18n="about_h1_b">为你而造</span></h1>
+        <p class="page-hero-desc" data-i18n="about_desc">
+          2004年创立于江苏，二十年来专注专业睡袋的研发与制造。
+          我们相信，每一次野外的夜晚，都值得拥有最可靠的温暖。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 品牌故事 ── -->
+  <section class="section">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+        <div class="fade-in">
+          <div class="section-label" data-i18n="brand_label">品牌故事</div>
+          <h2 class="section-title"><span data-i18n="brand_h2_a">从一针一线</span><br><span data-i18n="brand_h2_b">到</span><span class="hl" data-i18n="brand_h2_hl">全球市场</span></h2>
+          <p class="section-desc" style="margin-top:24px" data-i18n="brand_p1">
+            2004年，峰悦的创始人带着对户外运动的热爱和对品质的执着，
+            在江苏创立了这家专注睡袋制造的企业。
+          </p>
+          <p class="section-desc" style="margin-top:16px" data-i18n="brand_p2">
+            二十年来，我们从未停止对极限保暖技术的探索——
+            从北极科考到珠峰攀登，从童军夏令营到家庭露营，
+            峰悦的睡袋陪伴着无数探险者度过了人生中最难忘的夜晚。
+          </p>
+          <p class="section-desc" style="margin-top:16px" data-i18n="brand_p3">
+            今天，峰悦的产品销往全球50多个国家和地区，
+            并为300多个国际知名品牌提供OEM/ODM服务，
+            成为中国专业睡袋制造领域的标杆企业。
+          </p>
+        </div>
+        <div class="fade-in fade-in-delay-1">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;text-align:center">
+              <div style="font-size:2.5rem;font-weight:800;color:var(--primary);letter-spacing:-.04em">20<span style="font-size:1.2rem">+</span></div>
+              <div style="font-size:.85rem;color:var(--text2);margin-top:8px" data-i18n="about_stat_years">年制造经验</div>
+            </div>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;text-align:center">
+              <div style="font-size:2.5rem;font-weight:800;color:var(--primary);letter-spacing:-.04em">50<span style="font-size:1.2rem">+</span></div>
+              <div style="font-size:.85rem;color:var(--text2);margin-top:8px" data-i18n="about_stat_export">出口国家和地区</div>
+            </div>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;text-align:center">
+              <div style="font-size:2.5rem;font-weight:800;color:var(--primary);letter-spacing:-.04em">300<span style="font-size:1.2rem">+</span></div>
+              <div style="font-size:.85rem;color:var(--text2);margin-top:8px" data-i18n="about_stat_brands">合作品牌</div>
+            </div>
+            <div style="background:rgba(195,214,0,.08);border:1px solid var(--border-hl);border-radius:var(--radius-lg);padding:32px;text-align:center">
+              <div style="font-size:2.5rem;font-weight:800;color:var(--primary);letter-spacing:-.04em">-40<span style="font-size:1.2rem">°C</span></div>
+              <div style="font-size:.85rem;color:var(--text2);margin-top:8px" data-i18n="about_stat_temp">极限适温</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── 发展历程 ── -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center fade-in">
+        <div class="section-label" data-i18n="timeline_label">发展历程</div>
+        <h2 class="section-title"><span data-i18n="timeline_title_a">二十年</span><span class="hl" data-i18n="timeline_title_hl">成长</span><span data-i18n="timeline_title_b">足迹</span></h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item fade-in">
+          <div class="timeline-content">
+            <div class="timeline-year">2004</div>
+            <div class="timeline-heading" data-i18n="tl2004_h">峰悦成立</div>
+            <div class="timeline-body" data-i18n="tl2004_b">江苏峰悦户外用品有限公司正式成立，专注睡袋研发与制造，立志打造中国专业户外睡袋第一品牌。</div>
+          </div>
+          <div class="timeline-dot">04</div>
+          <div class="timeline-space"></div>
+        </div>
+
+        <div class="timeline-item fade-in">
+          <div class="timeline-space"></div>
+          <div class="timeline-dot">08</div>
+          <div class="timeline-content">
+            <div class="timeline-year">2008</div>
+            <div class="timeline-heading" data-i18n="tl2008_h">首获国际认证</div>
+            <div class="timeline-body" data-i18n="tl2008_b">通过 ISO 9001 国际质量管理体系认证，开始向欧美户外品牌提供 OEM 代工服务，产品进入北美市场。</div>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-in">
+          <div class="timeline-content">
+            <div class="timeline-year">2012</div>
+            <div class="timeline-heading" data-i18n="tl2012_h">技术突破</div>
+            <div class="timeline-body" data-i18n="tl2012_b">自主研发"冰芯"极寒保暖体系，冰峰系列睡袋成功通过-40°C环境测试，填补国内技术空白。</div>
+          </div>
+          <div class="timeline-dot">12</div>
+          <div class="timeline-space"></div>
+        </div>
+
+        <div class="timeline-item fade-in">
+          <div class="timeline-space"></div>
+          <div class="timeline-dot">16</div>
+          <div class="timeline-content">
+            <div class="timeline-year">2016</div>
+            <div class="timeline-heading" data-i18n="tl2016_h">全球扩张</div>
+            <div class="timeline-body" data-i18n="tl2016_b">产品覆盖全球30多个国家，合作品牌突破100家，在德国、日本设立海外办事处，全球化布局加速。</div>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-in">
+          <div class="timeline-content">
+            <div class="timeline-year">2020</div>
+            <div class="timeline-heading" data-i18n="tl2020_h">绿色转型</div>
+            <div class="timeline-body" data-i18n="tl2020_b">率先获得 RDS 负责任羽绒标准认证，推出全系列环保产品线，可再生纤维填充占比超40%。</div>
+          </div>
+          <div class="timeline-dot">20</div>
+          <div class="timeline-space"></div>
+        </div>
+
+        <div class="timeline-item fade-in">
+          <div class="timeline-space"></div>
+          <div class="timeline-dot">24</div>
+          <div class="timeline-content">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-heading" data-i18n="tl2024_h">二十周年</div>
+            <div class="timeline-body" data-i18n="tl2024_b">合作品牌突破300家，出口覆盖50余个国家和地区，全面布局智能化生产，迈向新的二十年。</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── 资质认证 ── -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center fade-in">
+        <div class="section-label" data-i18n="certs_label">资质认证</div>
+        <h2 class="section-title"><span data-i18n="certs_title_a">品质</span><span class="hl" data-i18n="certs_title_hl">有据可查</span></h2>
+        <p class="section-desc" style="margin-top:16px" data-i18n="certs_desc">六项国际权威认证，是我们对品质承诺的有力证明</p>
+      </div>
+      <div class="certs-grid">
+        <div class="cert-card fade-in">
+          <div class="cert-icon">🏆</div>
+          <div>
+            <div class="cert-title" data-i18n="cert1_title">ISO 9001</div>
+            <div class="cert-desc" data-i18n="cert1_desc">国际质量管理体系认证，确保全流程生产标准符合国际规范。</div>
+          </div>
+        </div>
+        <div class="cert-card fade-in fade-in-delay-1">
+          <div class="cert-icon">🌿</div>
+          <div>
+            <div class="cert-title" data-i18n="cert2_title">RDS 认证</div>
+            <div class="cert-desc" data-i18n="cert2_desc">负责任羽绒标准认证，保障羽绒原料全链路符合动物福利要求。</div>
+          </div>
+        </div>
+        <div class="cert-card fade-in fade-in-delay-2">
+          <div class="cert-icon">🛡️</div>
+          <div>
+            <div class="cert-title" data-i18n="cert3_title">OEKO-TEX®</div>
+            <div class="cert-desc" data-i18n="cert3_desc">全系面料通过有害物质检测，无有害物质，安全触肤有保障。</div>
+          </div>
+        </div>
+        <div class="cert-card fade-in fade-in-delay-1">
+          <div class="cert-icon">🔬</div>
+          <div>
+            <div class="cert-title" data-i18n="cert4_title">SGS 检测</div>
+            <div class="cert-desc" data-i18n="cert4_desc">全产品系列通过SGS第三方检测机构检测，数据公开透明。</div>
+          </div>
+        </div>
+        <div class="cert-card fade-in fade-in-delay-2">
+          <div class="cert-icon">⭐</div>
+          <div>
+            <div class="cert-title" data-i18n="cert5_title">欧盟 CE 认证</div>
+            <div class="cert-desc" data-i18n="cert5_desc">符合欧盟产品安全与性能标准，可在欧盟市场自由销售流通。</div>
+          </div>
+        </div>
+        <div class="cert-card fade-in fade-in-delay-3">
+          <div class="cert-icon">♻️</div>
+          <div>
+            <div class="cert-title" data-i18n="cert6_title">GRS 认证</div>
+            <div class="cert-desc" data-i18n="cert6_desc">全球再生标准认证，再生纤维产品符合国际可持续发展要求。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="cta-section section-sm">
+    <div class="container">
+      <div class="cta-inner">
+        <div>
+          <h2 class="cta-title"><span data-i18n="about_cta_title">与</span><span class="hl" data-i18n="about_cta_hl">行业标杆</span><span data-i18n="about_cta_suf">合作</span></h2>
+          <p class="cta-desc" data-i18n="about_cta_desc">加入全球300+品牌的选择，让峰悦成为您的专属制造伙伴。</p>
+        </div>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-primary" data-i18n="about_cta_start">开始合作</a>
+          <a href="products.html" class="btn btn-outline" data-i18n="about_cta_browse">浏览产品</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 页脚 ── -->
+  <footer class="footer">
+    <div class="container">
+      <!-- 页脚网格：联系方式 | 二维码 -->
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4 data-i18n="footer_contact_h">联系方式</h4>
+          <div class="footer-contact-item">
+            <span class="ico">📞</span>
+            <span>0086-511-86451188</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="ico">✉️</span>
+            <span>506466936@qq.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="ico">📍</span>
+            <span data-i18n="footer_address">江苏省丹阳市运河镇</span>
+          </div>
+        </div>
+        <div class="footer-brand">
+          <div class="footer-qr">
+            <div class="footer-qr-item">
+              <img src="contacts/whatsapp.png" alt="WhatsApp">
+              <span>WhatsApp</span>
+            </div>
+            <div class="footer-qr-item">
+              <img src="contacts/wechat.png" alt="微信">
+              <span>微信</span>
+            </div>
+            <div class="footer-qr-item">
+              <img src="contacts/contact.png" alt="联系方式">
+              <span>联系方式</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 全宽底栏：版权 + 隐私政策 -->
+      <div class="footer-bottom">
+        <p class="footer-copy" data-i18n="footer_copy">© 2024 江苏峰悦户外用品有限公司 版权所有</p>
+        <div class="footer-legal">
+          <a href="#" data-i18n="footer_privacy">隐私政策</a>
+          <a href="#" data-i18n="footer_terms">服务条款</a>
+          <a href="#" data-i18n="footer_icp">苏ICP备XXXXXXXX号</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

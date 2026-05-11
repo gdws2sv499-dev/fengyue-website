@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr" data-title-key="page_title_contact">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>联系我们 · 峰悦户外</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── 导航 ── -->
+  <nav class="nav scrolled" id="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="logo-small.png" alt="峰悦户外 FENGYUE" class="nav-logo-img">
+    </a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav_home">首页</a>
+      <a href="products.html" data-i18n="nav_products">产品中心</a>
+      <a href="about.html" data-i18n="nav_about">关于我们</a>
+      <a href="contact.html" class="active" data-i18n="nav_contact">联系我们</a>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="zh" onclick="switchLang('zh')">中</button>
+        <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+      </div>
+      <a href="contact.html" class="nav-cta" data-i18n="nav_cta">立即咨询</a>
+    </div>
+    <div class="nav-toggle" id="navToggle">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html" data-i18n="nav_home">首页</a>
+    <a href="products.html" data-i18n="nav_products">产品中心</a>
+    <a href="about.html" data-i18n="nav_about">关于我们</a>
+    <a href="contact.html" class="active" data-i18n="nav_contact">联系我们</a>
+    <div class="lang-switcher lang-switcher-mobile">
+      <button class="lang-btn active" data-lang="zh" onclick="switchLang('zh')">中</button>
+      <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+    </div>
+  </div>
+
+  <!-- ── 页面英雄区 ── -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="page-hero-eyebrow" data-i18n="contact_eyebrow">联系我们</div>
+        <h1 class="page-hero-title"><span data-i18n="contact_h1_a">让我们</span><br><span class="hl" data-i18n="contact_h1_b">开始合作</span></h1>
+        <p class="page-hero-desc" data-i18n="contact_desc">
+          无论是产品咨询、批量采购还是 OEM/ODM 定制，
+          我们的专业团队将在24小时内响应您的需求。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 联系内容 ── -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- 左侧信息 -->
+        <div class="fade-in">
+          <div class="section-label" style="margin-bottom:24px" data-i18n="contact_info_label">联系方式</div>
+          <div class="contact-info-cards">
+            <div class="contact-card">
+              <div class="contact-card-icon">📞</div>
+              <div>
+                <div class="contact-card-label" data-i18n="contact_phone_label">销售热线</div>
+                <div class="contact-card-value">+86 400-XXX-XXXX</div>
+                <div class="contact-card-sub" data-i18n="contact_phone_sub">工作日 09:00–18:00</div>
+              </div>
+            </div>
+            <div class="contact-card">
+              <div class="contact-card-icon">✉️</div>
+              <div>
+                <div class="contact-card-label" data-i18n="contact_email_label">商务邮箱</div>
+                <div class="contact-card-value">business@fengyue-outdoor.com</div>
+                <div class="contact-card-sub" data-i18n="contact_email_sub">24小时内回复</div>
+              </div>
+            </div>
+            <div class="contact-card">
+              <div class="contact-card-icon">📍</div>
+              <div>
+                <div class="contact-card-label" data-i18n="contact_addr_label">工厂地址</div>
+                <div class="contact-card-value" data-i18n="contact_addr_value">江苏省XX市XX区峰悦工业园</div>
+                <div class="contact-card-sub" data-i18n="contact_addr_sub">欢迎预约参观工厂</div>
+              </div>
+            </div>
+            <div class="contact-card">
+              <div class="contact-card-icon">💬</div>
+              <div>
+                <div class="contact-card-label" data-i18n="contact_wechat_label">微信客服</div>
+                <div class="contact-card-value">fengyue_outdoor</div>
+                <div class="contact-card-sub" data-i18n="contact_wechat_sub">扫码添加企业微信</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 地图占位 -->
+          <div class="map-placeholder" style="margin-top:20px;height:180px">
+            <div class="map-icon">🗺️</div>
+            <span data-i18n="contact_map_text">江苏省峰悦工业园</span>
+            <span style="font-size:.78rem;color:var(--text3)" data-i18n="contact_map_loading">地图加载中…</span>
+          </div>
+        </div>
+
+        <!-- 右侧表单 -->
+        <div class="contact-form-wrap fade-in fade-in-delay-1">
+          <div id="formContainer">
+            <div class="form-title" data-i18n="form_title">发送询盘</div>
+            <div class="form-subtitle" data-i18n="form_subtitle">填写以下信息，我们将在24小时内联系您</div>
+            <form id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label data-i18n="form_name">姓名 *</label>
+                  <input type="text" data-i18n-ph="form_name_ph" placeholder="您的姓名" required>
+                </div>
+                <div class="form-group">
+                  <label data-i18n="form_company">公司名称</label>
+                  <input type="text" data-i18n-ph="form_company_ph" placeholder="公司/品牌名称">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label data-i18n="form_phone">联系电话 *</label>
+                  <input type="tel" placeholder="+86 138 0000 0000" required>
+                </div>
+                <div class="form-group">
+                  <label data-i18n="form_email">电子邮箱</label>
+                  <input type="email" placeholder="your@email.com">
+                </div>
+              </div>
+              <div class="form-group">
+                <label data-i18n="form_type">咨询类型</label>
+                <select>
+                  <option value="" data-i18n="form_type_ph">请选择咨询类型</option>
+                  <option data-i18n="form_type_1">产品询价</option>
+                  <option data-i18n="form_type_2">批量采购</option>
+                  <option data-i18n="form_type_3">OEM 代工定制</option>
+                  <option data-i18n="form_type_4">ODM 设计定制</option>
+                  <option data-i18n="form_type_5">其他</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label data-i18n="form_message">留言内容 *</label>
+                <textarea data-i18n-ph="form_message_ph" placeholder="请详细描述您的需求，例如产品型号、数量、温区要求等..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" data-i18n="form_submit">
+                提交询盘
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              </button>
+            </form>
+          </div>
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">✓</div>
+            <h3 data-i18n="form_success_h">询盘已发送！</h3>
+            <p data-i18n="form_success_p">感谢您的咨询，我们将在24小时内通过电话或邮件与您联系。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ 快问快答 ── -->
+  <section class="section-sm" style="border-top:1px solid var(--border)">
+    <div class="container">
+      <div class="text-center fade-in" style="margin-bottom:48px">
+        <div class="section-label" data-i18n="faq_label">常见问题</div>
+        <h2 class="section-title" style="font-size:clamp(1.8rem,3vw,2.5rem)"><span data-i18n="faq_title_a">快速</span><span class="hl" data-i18n="faq_title_hl">解答</span></h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:900px;margin:0 auto">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px" class="fade-in">
+          <div style="font-size:.95rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n="faq1_q">最小起订量是多少？</div>
+          <div style="font-size:.875rem;color:var(--text2);line-height:1.7" data-i18n="faq1_a">OEM/ODM 定制最小起订量100件，零售订单无最低限制，大宗采购享折扣。</div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px" class="fade-in fade-in-delay-1">
+          <div style="font-size:.95rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n="faq2_q">交货期一般多久？</div>
+          <div style="font-size:.875rem;color:var(--text2);line-height:1.7" data-i18n="faq2_a">现货产品3–7个工作日发货，定制产品30–45个工作日，急单可协商加急方案。</div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px" class="fade-in fade-in-delay-2">
+          <div style="font-size:.95rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n="faq3_q">支持哪些支付方式？</div>
+          <div style="font-size:.875rem;color:var(--text2);line-height:1.7" data-i18n="faq3_a">支持电汇（T/T）、信用证（L/C）、西联汇款及国内对公转账，欢迎咨询详情。</div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px" class="fade-in fade-in-delay-3">
+          <div style="font-size:.95rem;font-weight:700;color:var(--white);margin-bottom:10px" data-i18n="faq4_q">可以参观工厂吗？</div>
+          <div style="font-size:.875rem;color:var(--text2);line-height:1.7" data-i18n="faq4_a">欢迎预约参观。请提前3个工作日联系我们安排行程，我们将全程接待。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 页脚 ── -->
+  <footer class="footer">
+    <div class="container">
+      <!-- 页脚网格：联系方式 | 二维码 -->
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4 data-i18n="footer_contact_h">联系方式</h4>
+          <div class="footer-contact-item">
+            <span class="ico">📞</span>
+            <span>0086-511-86451188</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="ico">✉️</span>
+            <span>506466936@qq.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="ico">📍</span>
+            <span data-i18n="footer_address">江苏省丹阳市运河镇</span>
+          </div>
+        </div>
+        <div class="footer-brand">
+          <div class="footer-qr">
+            <div class="footer-qr-item">
+              <img src="contacts/whatsapp.png" alt="WhatsApp">
+              <span>WhatsApp</span>
+            </div>
+            <div class="footer-qr-item">
+              <img src="contacts/wechat.png" alt="微信">
+              <span>微信</span>
+            </div>
+            <div class="footer-qr-item">
+              <img src="contacts/contact.png" alt="联系方式">
+              <span>联系方式</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 全宽底栏：版权 + 隐私政策 -->
+      <div class="footer-bottom">
+        <p class="footer-copy" data-i18n="footer_copy">© 2024 江苏峰悦户外用品有限公司 版权所有</p>
+        <div class="footer-legal">
+          <a href="#" data-i18n="footer_privacy">隐私政策</a>
+          <a href="#" data-i18n="footer_terms">服务条款</a>
+          <a href="#" data-i18n="footer_icp">苏ICP备XXXXXXXX号</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
