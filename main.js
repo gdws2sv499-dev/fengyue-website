@@ -60,22 +60,54 @@ if (fadeEls.length) {
 const filterBtns = document.querySelectorAll('.filter-btn');
 const productCards = document.querySelectorAll('#productsGrid .product-card');
 const bgCurrent = document.getElementById('bgCurrent');
+const bgNext = document.getElementById('bgNext');
 
 // 追踪当前选中的 filter
 let currentFilter = 'all';
+let isTransitioning = false;
 
 /**
- * 直接切换背景（无过渡效果）
+ * 淡入淡出切换背景
  */
 function switchHeroBg(filter) {
-  if (!bgCurrent) return;
+  if (!bgCurrent || !bgNext) return;
+  if (isTransitioning) return;
 
   const isAll = filter === 'all';
   const targetClass = isAll ? 'has-bg' : 'hero-bg-' + filter;
 
-  // 移除旧的背景类，添加新的背景类
-  bgCurrent.className = 'page-hero-bg bg-current';
-  bgCurrent.classList.add(targetClass);
+  // 检查是否已是目标背景
+  const currentBgClass = Array.from(bgCurrent.classList)
+    .find(cls => cls === 'has-bg' || cls.startsWith('hero-bg-'));
+  if (currentBgClass === targetClass) return;
+
+  isTransitioning = true;
+
+  // 设置 bgNext 为新背景
+  bgNext.className = 'page-hero-bg bg-next';
+  bgNext.classList.add(targetClass);
+
+  // 触发淡入淡出
+  requestAnimationFrame(() => {
+    bgNext.classList.add('fading'); // 新图淡入
+    bgCurrent.classList.add('fading'); // 旧图淡出
+
+    // 动画结束后交换层
+    bgCurrent.addEventListener('transitionend', function onEnd() {
+      bgCurrent.removeEventListener('transitionend', onEnd);
+      
+      // 交换类名
+      bgNext.classList.remove('fading');
+      bgNext.classList.remove('bg-next');
+      bgNext.classList.add('bg-current');
+      
+      bgCurrent.classList.remove('fading');
+      bgCurrent.classList.remove(currentBgClass);
+      bgCurrent.classList.add('bg-next');
+      
+      isTransitioning = false;
+    });
+  });
 }
 
 if (filterBtns.length && productCards.length && bgCurrent) {
