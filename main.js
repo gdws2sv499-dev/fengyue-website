@@ -62,43 +62,24 @@ const productCards = document.querySelectorAll('#productsGrid .product-card');
 
 // 追踪当前选中的 filter
 let currentFilter = 'all';
-let isTransitioning = false;
 
 /**
- * 淡入淡出切换背景
+ * 直接切换背景（无过渡效果）
  */
 function switchHeroBg(filter) {
   const bgA = document.getElementById('bgCurrent');
   const bgB = document.getElementById('bgNext');
-  if (!bgA || !bgB) return;
-  if (isTransitioning) return;
+  if (!bgA) return;
 
   const isAll = filter === 'all';
   const targetClass = isAll ? 'has-bg' : 'hero-bg-' + filter;
 
-  // 检查 bgA 是否已有目标背景
+  // 检查是否已是目标背景
   if (bgA.classList.contains(targetClass)) return;
 
-  isTransitioning = true;
-
-  // 设置 bgB 为新背景
+  // 切换：bgB 变成显示层，bgA 变成隐藏层
   bgB.className = 'page-hero-bg bg-current ' + targetClass;
-
-  // 触发动画
-  requestAnimationFrame(() => {
-    bgB.classList.add('fading');
-
-    // 动画结束后交换
-    bgB.addEventListener('transitionend', function onEnd() {
-      bgB.removeEventListener('transitionend', onEnd);
-      
-      // 把 bgB 的背景转移到 bgA（保持可见）
-      bgA.className = 'page-hero-bg bg-next';
-      bgB.className = 'page-hero-bg bg-current ' + targetClass;
-      
-      isTransitioning = false;
-    });
-  });
+  bgA.className = 'page-hero-bg bg-next';
 }
 
 if (filterBtns.length && productCards.length && bgCurrent) {
