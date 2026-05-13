@@ -1219,6 +1219,11 @@ ul, ol { list-style: none; }
   color: var(--white);
   margin-bottom: 8px;
 }
+.product-name .spec-label {
+  font-size: .72rem;
+  font-weight: 400;
+  color: var(--text3);
+}
 .product-desc-text {
   font-size: .82rem;
   color: var(--text2);
