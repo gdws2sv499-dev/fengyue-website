@@ -1242,7 +1242,7 @@ ul, ol { list-style: none; }
   gap: 2px;
 }
 .product-spec-item strong {
-  font-size: .8rem;
+  font-size: .88rem;
   font-weight: 700;
   color: var(--text);
 }
