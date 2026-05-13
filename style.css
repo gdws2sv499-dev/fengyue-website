@@ -1276,6 +1276,24 @@ ul, ol { list-style: none; }
 }
 .product-link:hover { gap: 8px; }
 
+/* ── 产品卡片底部"查看更多" ── */
+.product-card-more {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.product-card-more a {
+  color: var(--primary);
+  font-size: .82rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap var(--transition);
+}
+.product-card-more a:hover { gap: 8px; }
+
 /* ── 淡入动画 ── */
 .fade-in {
   opacity: 0;
