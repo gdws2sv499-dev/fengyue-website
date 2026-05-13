@@ -56,47 +56,17 @@ if (fadeEls.length) {
   fadeEls.forEach(el => observer.observe(el));
 }
 
-// ── 产品筛选 & 背景图切换 ────────────────────────────────────
+// ── 产品筛选 ──────────────────────────────────────────────────
 const filterBtns = document.querySelectorAll('.filter-btn');
 const productCards = document.querySelectorAll('#productsGrid .product-card');
 
-// 追踪当前选中的 filter
-let currentFilter = 'all';
-
-/**
- * 直接切换背景（无过渡效果）
- */
-function switchHeroBg(filter) {
-  const bgA = document.getElementById('bgCurrent');
-  const bgB = document.getElementById('bgNext');
-  if (!bgA) return;
-
-  const isAll = filter === 'all';
-  const targetClass = isAll ? 'has-bg' : 'hero-bg-' + filter;
-
-  // 检查是否已是目标背景
-  if (bgA.classList.contains(targetClass)) return;
-
-  // 切换：bgB 变成显示层，bgA 变成隐藏层
-  bgB.className = 'page-hero-bg bg-current ' + targetClass;
-  bgA.className = 'page-hero-bg bg-next';
-}
-
-if (filterBtns.length && productCards.length && bgCurrent) {
-  // 初始化 currentFilter 为当前 active 按钮的 filter
-  const initActive = document.querySelector('.filter-btn.active');
-  if (initActive) {
-    currentFilter = initActive.dataset.filter;
-  }
-
+if (filterBtns.length && productCards.length) {
   filterBtns.forEach(btn => {
-    // 点击：切换筛选 + 更新背景 + 更新 currentFilter
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
       const filter = btn.dataset.filter;
-      currentFilter = filter;
 
       // 筛选产品卡片
       productCards.forEach(card => {
@@ -111,9 +81,6 @@ if (filterBtns.length && productCards.length && bgCurrent) {
           card.style.display = 'none';
         }
       });
-
-      // 背景图切换
-      switchHeroBg(filter);
     });
   });
 }

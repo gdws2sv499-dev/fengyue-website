@@ -944,73 +944,18 @@ ul, ol { list-style: none; }
    关于页 · 英雄区
    ============================================================ */
 .page-hero {
-  min-height: 55vh;
+  min-height: 28vh;
   display: flex;
   align-items: flex-end;
-  padding-bottom: 80px;
+  padding-bottom: 48px;
   position: relative;
   overflow: hidden;
   background: #000;
 }
 
-/* ── 产品页背景图切换核心样式 ──
-
-   方案：双层交叉淡入淡出
-   - bg-current (z-index: 0) = 当前背景层
-   - bg-next (z-index: 0)     = 下一背景层
-   - overlay (z-index: 1)     = 渐变遮罩层
-   - content (z-index: 2)      = 内容层
-
-   切换流程（由 JS 控制）：
-   1. 给 bg-next 设置新背景图 class
-   2. 两层同时开始过渡：bg-current opacity 1→0，bg-next opacity 0→1
-   3. 动画结束后（2s），交换类名，bg-next 恢复 opacity 1
-*/
-
-/* ── 背景层基础样式 ── */
-.page-hero-bg {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 0;
-  background: #000;
-  transition: opacity 1s ease-in-out;
-}
-
-/* ── 默认状态：无背景图，只有网格纹理 ── */
-.page-hero-bg.bg-current:not(.has-bg):not([class*="hero-bg-"]),
-.page-hero-bg.bg-next:not(.has-bg):not([class*="hero-bg-"]) {
-  background-image:
-    linear-gradient(rgba(195,214,0,.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(195,214,0,.03) 1px, transparent 1px),
-    radial-gradient(circle at 80% 80%, rgba(195,214,0,.06) 0%, transparent 50%);
-  background-size: 50px 50px, 50px 50px, 100% 100%;
-}
-
-/* ── 全部产品背景 ── */
-.page-hero-bg.has-bg { background: url('slides/slide-hero-all.jpg') center center / cover no-repeat; }
-
-/* ── 各系列背景 ── */
-.page-hero-bg.hero-bg-envelope   { background: url('series-imgs/信封.png') center center / cover no-repeat; }
-.page-hero-bg.hero-bg-hood       { background: url('series-imgs/戴帽.png') center center / cover no-repeat; }
-.page-hero-bg.hero-bg-mummy      { background: url('series-imgs/妈咪.png') center center / cover no-repeat; }
-.page-hero-bg.hero-bg-lightweight { background: url('series-imgs/轻盈.png') center center / cover no-repeat; }
-.page-hero-bg.hero-bg-military   { background: url('series-imgs/行军.png') center center / cover no-repeat; }
-.page-hero-bg.hero-bg-twoperson  { background: url('series-imgs/双人.png') center center / cover no-repeat; }
-.page-hero-bg.hero-bg-down       { background: url('series-imgs/羽绒.png') center center / cover no-repeat; }
-.page-hero-bg.hero-bg-kids       { background: url('series-imgs/儿童.png') center center / cover no-repeat; }
-.page-hero-bg.hero-bg-special     { background: url('series-imgs/特殊.png') center center / cover no-repeat; }
-
-/* ── 当前背景层：切换时淡出 ── */
-.page-hero-bg.bg-current.fading {
-  opacity: 0;
-}
-
-/* ── 下一背景层：切换时淡入 ── */
-.page-hero-bg.bg-next {
-  opacity: 0;
-}
-.page-hero-bg.bg-next.fading {
-  opacity: 1;
+/* ── 产品页固定背景 ── */
+.page-hero-fixed {
+  background: url('series-imgs/羽绒.png') center center / cover no-repeat;
 }
 
 /* ── 渐变遮罩层 ── */
@@ -1030,7 +975,7 @@ ul, ol { list-style: none; }
 .page-hero-content {
   position: relative;
   z-index: 2;
-  padding-top: calc(var(--nav-h) + 60px);
+  padding-top: calc(var(--nav-h) + 55px);
 }
 .page-hero-eyebrow {
   font-size: .75rem;
@@ -1068,6 +1013,8 @@ ul, ol { list-style: none; }
   color: var(--text2);
   max-width: 100%;
   line-height: 1.75;
+  margin-top: -20px;
+  margin-left: 5px;
 }
 
 /* ============================================================
@@ -1253,11 +1200,9 @@ ul, ol { list-style: none; }
   transform: scale(1);
 }
 .product-img {
-  aspect-ratio: 4/3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
+  aspect-ratio: 1/1;
+  width: 100%;
+  object-fit: cover;
 }
 .product-body { padding: 24px; }
 .product-series {

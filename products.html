@@ -40,11 +40,7 @@
   </div>
 
   <!-- ── 页面英雄区 ── -->
-  <section class="page-hero" id="pageHero">
-    <!-- 当前背景层 -->
-    <div class="page-hero-bg bg-current has-bg" id="bgCurrent"></div>
-    <!-- 下一背景层（切换时淡入） -->
-    <div class="page-hero-bg bg-next" id="bgNext"></div>
+  <section class="page-hero page-hero-fixed" id="pageHero">
     <!-- 渐变遮罩层 -->
     <div class="page-hero-overlay"></div>
     <!-- 内容层 -->
@@ -86,157 +82,9 @@
       <!-- 产品网格 -->
       <div class="products-grid" id="productsGrid">
 
-        <!-- 极地系列 -->
-        <div class="product-card fade-in" data-category="polar">
-          <div class="product-img" style="background:linear-gradient(135deg,#0D1F00,#1A3800)">🏔️</div>
-          <div class="product-body">
-            <div class="product-series" data-i18n="p1_series">极地系列</div>
-            <div class="product-name" data-i18n="p1_name">冰峰 Pro X · -40°C</div>
-            <div class="product-desc-text" data-i18n="p1_desc">顶级鹅绒800蓬，双层防风结构，极地科考级别保暖。</div>
-            <div class="product-specs">
-              <div class="product-spec-item"><strong>-40°C</strong><span data-i18n="spec_temp">适温</span></div>
-              <div class="product-spec-item"><strong>1.85kg</strong><span data-i18n="spec_weight">重量</span></div>
-              <div class="product-spec-item" data-i18n="p1_fill">鹅绒</div>
-            </div>
-            <div class="product-foot">
-              <div class="product-price"><strong>¥2,880</strong> <span data-i18n="price_from">起</span></div>
-              <a href="contact.html" class="product-link" data-i18n="product_inquiry">咨询定价 →</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card fade-in fade-in-delay-1" data-category="polar">
-          <div class="product-img" style="background:linear-gradient(135deg,#0A1500,#142800)">❄️</div>
-          <div class="product-body">
-            <div class="product-series" data-i18n="p2_series">极地系列</div>
-            <div class="product-name" data-i18n="p2_name">冰峰 Elite · -25°C</div>
-            <div class="product-desc-text" data-i18n="p2_desc">鸭绒700蓬，轻量化极地方案，专为高效移动设计。</div>
-            <div class="product-specs">
-              <div class="product-spec-item"><strong>-25°C</strong><span data-i18n="spec_temp">适温</span></div>
-              <div class="product-spec-item"><strong>1.45kg</strong><span data-i18n="spec_weight">重量</span></div>
-              <div class="product-spec-item" data-i18n="p2_fill">鸭绒</div>
-            </div>
-            <div class="product-foot">
-              <div class="product-price"><strong>¥1,980</strong> <span data-i18n="price_from">起</span></div>
-              <a href="contact.html" class="product-link" data-i18n="product_inquiry">咨询定价 →</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 登山系列 -->
-        <div class="product-card fade-in fade-in-delay-2" data-category="alpine">
-          <div class="product-img" style="background:linear-gradient(135deg,#001A1A,#003333)">⛺</div>
-          <div class="product-body">
-            <div class="product-series" data-i18n="p3_series">登山系列</div>
-            <div class="product-name" data-i18n="p3_name">云脊 Alpine · -20°C</div>
-            <div class="product-desc-text" data-i18n="p3_desc">防水处理鸭绒700蓬，修身版型减重20%，登山营地首选。</div>
-            <div class="product-specs">
-              <div class="product-spec-item"><strong>-20°C</strong><span data-i18n="spec_temp">适温</span></div>
-              <div class="product-spec-item"><strong>1.2kg</strong><span data-i18n="spec_weight">重量</span></div>
-              <div class="product-spec-item" data-i18n="p3_fill">防水绒</div>
-            </div>
-            <div class="product-foot">
-              <div class="product-price"><strong>¥1,580</strong> <span data-i18n="price_from">起</span></div>
-              <a href="contact.html" class="product-link" data-i18n="product_inquiry">咨询定价 →</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card fade-in" data-category="alpine">
-          <div class="product-img" style="background:linear-gradient(135deg,#001212,#002424)">🗻</div>
-          <div class="product-body">
-            <div class="product-series" data-i18n="p4_series">登山系列</div>
-            <div class="product-name" data-i18n="p4_name">云脊 Light · -10°C</div>
-            <div class="product-desc-text" data-i18n="p4_desc">超轻800g设计，三季高山露营，背包客的绝佳拍档。</div>
-            <div class="product-specs">
-              <div class="product-spec-item"><strong>-10°C</strong><span data-i18n="spec_temp">适温</span></div>
-              <div class="product-spec-item"><strong>800g</strong><span data-i18n="spec_weight">重量</span></div>
-              <div class="product-spec-item" data-i18n="p4_fill">轻量绒</div>
-            </div>
-            <div class="product-foot">
-              <div class="product-price"><strong>¥980</strong> <span data-i18n="price_from">起</span></div>
-              <a href="contact.html" class="product-link" data-i18n="product_inquiry">咨询定价 →</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 四季系列 -->
-        <div class="product-card fade-in fade-in-delay-1" data-category="trek">
-          <div class="product-img" style="background:linear-gradient(135deg,#0A0A1A,#1A1A40)">🌲</div>
-          <div class="product-body">
-            <div class="product-series" data-i18n="p5_series">四季系列</div>
-            <div class="product-name" data-i18n="p5_name">星野 Trek · -5°C</div>
-            <div class="product-desc-text" data-i18n="p5_desc">化纤速干填充，超轻800g，三季通用的轻量化露营伴侣。</div>
-            <div class="product-specs">
-              <div class="product-spec-item"><strong>-5°C</strong><span data-i18n="spec_temp">适温</span></div>
-              <div class="product-spec-item"><strong>800g</strong><span data-i18n="spec_weight">重量</span></div>
-              <div class="product-spec-item" data-i18n="p5_fill">化纤</div>
-            </div>
-            <div class="product-foot">
-              <div class="product-price"><strong>¥680</strong> <span data-i18n="price_from">起</span></div>
-              <a href="contact.html" class="product-link" data-i18n="product_inquiry">咨询定价 →</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card fade-in fade-in-delay-2" data-category="trek">
-          <div class="product-img" style="background:linear-gradient(135deg,#080818,#12122A)">🏕️</div>
-          <div class="product-body">
-            <div class="product-series" data-i18n="p6_series">四季系列</div>
-            <div class="product-name" data-i18n="p6_name">星野 Camp · +5°C</div>
-            <div class="product-desc-text" data-i18n="p6_desc">夏季露营专款，透气亲肤面料，轻薄舒适，价格亲民。</div>
-            <div class="product-specs">
-              <div class="product-spec-item"><strong>+5°C</strong><span data-i18n="spec_temp">适温</span></div>
-              <div class="product-spec-item"><strong>600g</strong><span data-i18n="spec_weight">重量</span></div>
-              <div class="product-spec-item" data-i18n="p6_fill">化纤</div>
-            </div>
-            <div class="product-foot">
-              <div class="product-price"><strong>¥380</strong> <span data-i18n="price_from">起</span></div>
-              <a href="contact.html" class="product-link" data-i18n="product_inquiry">咨询定价 →</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 儿童系列 -->
-        <div class="product-card fade-in" data-category="kids">
-          <div class="product-img" style="background:linear-gradient(135deg,#1A0A00,#331500)">🌟</div>
-          <div class="product-body">
-            <div class="product-series" data-i18n="p7_series">儿童系列</div>
-            <div class="product-name" data-i18n="p7_name">小峰 Junior · -5°C</div>
-            <div class="product-desc-text" data-i18n="p7_desc">儿童专属版型，无荧光剂面料，亲子露营和军训首选。</div>
-            <div class="product-specs">
-              <div class="product-spec-item"><strong>-5°C</strong><span data-i18n="spec_temp">适温</span></div>
-              <div class="product-spec-item"><strong>550g</strong><span data-i18n="spec_weight">重量</span></div>
-              <div class="product-spec-item" data-i18n="p7_fill">环保绒</div>
-            </div>
-            <div class="product-foot">
-              <div class="product-price"><strong>¥420</strong> <span data-i18n="price_from">起</span></div>
-              <a href="contact.html" class="product-link" data-i18n="product_inquiry">咨询定价 →</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card fade-in fade-in-delay-1" data-category="kids">
-          <div class="product-img" style="background:linear-gradient(135deg,#150A00,#2A1200)">🦋</div>
-          <div class="product-body">
-            <div class="product-series" data-i18n="p8_series">儿童系列</div>
-            <div class="product-name" data-i18n="p8_name">小峰 Mini · +5°C</div>
-            <div class="product-desc-text" data-i18n="p8_desc">幼儿款安全缝制，卡通印花，让小朋友爱上户外探险。</div>
-            <div class="product-specs">
-              <div class="product-spec-item"><strong>+5°C</strong><span data-i18n="spec_temp">适温</span></div>
-              <div class="product-spec-item"><strong>400g</strong><span data-i18n="spec_weight">重量</span></div>
-              <div class="product-spec-item" data-i18n="p8_fill">环保绒</div>
-            </div>
-            <div class="product-foot">
-              <div class="product-price"><strong>¥280</strong> <span data-i18n="price_from">起</span></div>
-              <a href="contact.html" class="product-link" data-i18n="product_inquiry">咨询定价 →</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 信封系列 -->
-        <div class="product-card fade-in fade-in-delay-2" data-category="envelope">
-          <div class="product-img" style="background:linear-gradient(135deg,#1A1A0A,#2A2A14)">✉️</div>
+        <!-- 1. 信封系列 -->
+        <div class="product-card fade-in" data-category="envelope">
+          <img class="product-img" src="series-imgs/信封.png" alt="信封系列">
           <div class="product-body">
             <div class="product-series">信封系列</div>
             <div class="product-name">暖途 Classic · -10°C</div>
@@ -253,9 +101,9 @@
           </div>
         </div>
 
-        <!-- 戴帽系列 -->
-        <div class="product-card fade-in" data-category="hood">
-          <div class="product-img" style="background:linear-gradient(135deg,#0A1A0A,#142814)">🎩</div>
+        <!-- 2. 戴帽系列 -->
+        <div class="product-card fade-in fade-in-delay-1" data-category="hood">
+          <img class="product-img" src="series-imgs/戴帽.png" alt="戴帽系列">
           <div class="product-body">
             <div class="product-series">戴帽系列</div>
             <div class="product-name">山魂 Hood · -15°C</div>
@@ -272,9 +120,9 @@
           </div>
         </div>
 
-        <!-- 妈咪系列 -->
-        <div class="product-card fade-in fade-in-delay-1" data-category="mummy">
-          <div class="product-img" style="background:linear-gradient(135deg,#1A0A1A,#281428)">👻</div>
+        <!-- 3. 妈咪系列 -->
+        <div class="product-card fade-in fade-in-delay-2" data-category="mummy">
+          <img class="product-img" src="series-imgs/妈咪.png" alt="妈咪系列">
           <div class="product-body">
             <div class="product-series">妈咪系列</div>
             <div class="product-name">飞羽 Mummy · -20°C</div>
@@ -291,9 +139,9 @@
           </div>
         </div>
 
-        <!-- 轻盈系列 -->
-        <div class="product-card fade-in fade-in-delay-2" data-category="lightweight">
-          <div class="product-img" style="background:linear-gradient(135deg,#0A1A1A,#142828)">🪶</div>
+        <!-- 4. 轻盈系列 -->
+        <div class="product-card fade-in" data-category="lightweight">
+          <img class="product-img" src="series-imgs/轻盈.png" alt="轻盈系列">
           <div class="product-body">
             <div class="product-series">轻盈系列</div>
             <div class="product-name">云燕 Lite · +5°C</div>
@@ -310,9 +158,9 @@
           </div>
         </div>
 
-        <!-- 行军系列 -->
-        <div class="product-card fade-in" data-category="military">
-          <div class="product-img" style="background:linear-gradient(135deg,#0A0A0A,#1A1A1A)">🎖️</div>
+        <!-- 5. 行军系列 -->
+        <div class="product-card fade-in fade-in-delay-1" data-category="military">
+          <img class="product-img" src="series-imgs/行军.png" alt="行军系列">
           <div class="product-body">
             <div class="product-series">行军系列</div>
             <div class="product-name">铁血 Tactical · -25°C</div>
@@ -329,9 +177,9 @@
           </div>
         </div>
 
-        <!-- 双人系列 -->
-        <div class="product-card fade-in fade-in-delay-1" data-category="twoperson">
-          <div class="product-img" style="background:linear-gradient(135deg,#1A0A0A,#281414)">💑</div>
+        <!-- 6. 双人系列 -->
+        <div class="product-card fade-in fade-in-delay-2" data-category="twoperson">
+          <img class="product-img" src="series-imgs/双人.png" alt="双人系列">
           <div class="product-body">
             <div class="product-series">双人系列</div>
             <div class="product-name">相伴 Duo · -5°C</div>
@@ -348,9 +196,9 @@
           </div>
         </div>
 
-        <!-- 羽绒系列 -->
-        <div class="product-card fade-in fade-in-delay-2" data-category="down">
-          <div class="product-img" style="background:linear-gradient(135deg,#1A1A14,#282820)">🪿</div>
+        <!-- 7. 羽绒系列 -->
+        <div class="product-card fade-in" data-category="down">
+          <img class="product-img" src="series-imgs/羽绒.png" alt="羽绒系列">
           <div class="product-body">
             <div class="product-series">羽绒系列</div>
             <div class="product-name">绒舞 Premium · -30°C</div>
@@ -367,9 +215,28 @@
           </div>
         </div>
 
-        <!-- 特殊系列 -->
-        <div class="product-card fade-in" data-category="special">
-          <div class="product-img" style="background:linear-gradient(135deg,#140A1A,#201428)">⭐</div>
+        <!-- 8. 儿童系列 -->
+        <div class="product-card fade-in fade-in-delay-1" data-category="kids">
+          <img class="product-img" src="series-imgs/儿童.png" alt="儿童系列">
+          <div class="product-body">
+            <div class="product-series">儿童系列</div>
+            <div class="product-name">小峰 Junior · -5°C</div>
+            <div class="product-desc-text">儿童专属版型，无荧光剂面料，亲子露营和军训首选。</div>
+            <div class="product-specs">
+              <div class="product-spec-item"><strong>-5°C</strong><span>适温</span></div>
+              <div class="product-spec-item"><strong>550g</strong><span>重量</span></div>
+              <div class="product-spec-item">环保绒</div>
+            </div>
+            <div class="product-foot">
+              <div class="product-price"><strong>¥420</strong> <span data-i18n="price_from">起</span></div>
+              <a href="contact.html" class="product-link" data-i18n="product_inquiry">咨询定价 →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. 特殊系列 -->
+        <div class="product-card fade-in fade-in-delay-2" data-category="special">
+          <img class="product-img" src="series-imgs/特殊.png" alt="特殊系列">
           <div class="product-body">
             <div class="product-series">特殊系列</div>
             <div class="product-name">探索 Expedition · -35°C</div>
@@ -386,9 +253,66 @@
           </div>
         </div>
 
-        <!-- 帐篷系列 -->
-        <div class="product-card fade-in fade-in-delay-1" data-category="tent">
-          <div class="product-img" style="background:linear-gradient(135deg,#0A1414,#142020)">⛺</div>
+        <!-- 10. 睡袋套系列 -->
+        <div class="product-card fade-in" data-category="cover">
+          <img class="product-img" src="series-imgs/睡袋套.png" alt="睡袋套系列">
+          <div class="product-body">
+            <div class="product-series">睡袋套系列</div>
+            <div class="product-name">舒眠 Liner · 通用</div>
+            <div class="product-desc-text">亲肤内胆设计，可单独使用或搭配睡袋，提升舒适度。</div>
+            <div class="product-specs">
+              <div class="product-spec-item"><strong>+10°C</strong><span>适温</span></div>
+              <div class="product-spec-item"><strong>150g</strong><span>重量</span></div>
+              <div class="product-spec-item">纯棉</div>
+            </div>
+            <div class="product-foot">
+              <div class="product-price"><strong>¥98</strong> <span data-i18n="price_from">起</span></div>
+              <a href="contact.html" class="product-link" data-i18n="product_inquiry">咨询定价 →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. 枕头系列 -->
+        <div class="product-card fade-in fade-in-delay-1" data-category="pillow">
+          <img class="product-img" src="series-imgs/充气枕头.png" alt="枕头系列">
+          <div class="product-body">
+            <div class="product-series">枕头系列</div>
+            <div class="product-name">安枕 CampPillow · 户外</div>
+            <div class="product-desc-text">可压缩充气枕，轻巧便携，户外睡眠的贴心伴侣。</div>
+            <div class="product-specs">
+              <div class="product-spec-item"><strong>通用</strong><span>适用</span></div>
+              <div class="product-spec-item"><strong>80g</strong><span>重量</span></div>
+              <div class="product-spec-item">TPU面料</div>
+            </div>
+            <div class="product-foot">
+              <div class="product-price"><strong>¥68</strong> <span data-i18n="price_from">起</span></div>
+              <a href="contact.html" class="product-link" data-i18n="product_inquiry">咨询定价 →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12. 被子&毯子系列 -->
+        <div class="product-card fade-in fade-in-delay-2" data-category="quilt">
+          <img class="product-img" src="series-imgs/被子.png" alt="被子&毯子系列">
+          <div class="product-body">
+            <div class="product-series">被子&毯子系列</div>
+            <div class="product-name">暖绒 Blanket · 多用途</div>
+            <div class="product-desc-text">多功能抓绒毯，轻盈保暖，露营、野餐、家庭备用皆宜。</div>
+            <div class="product-specs">
+              <div class="product-spec-item"><strong>通用</strong><span>适用</span></div>
+              <div class="product-spec-item"><strong>400g</strong><span>重量</span></div>
+              <div class="product-spec-item">抓绒</div>
+            </div>
+            <div class="product-foot">
+              <div class="product-price"><strong>¥168</strong> <span data-i18n="price_from">起</span></div>
+              <a href="contact.html" class="product-link" data-i18n="product_inquiry">咨询定价 →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 13. 帐篷系列 -->
+        <div class="product-card fade-in" data-category="tent">
+          <img class="product-img" src="series-imgs/帐篷.png" alt="帐篷系列">
           <div class="product-body">
             <div class="product-series">帐篷系列</div>
             <div class="product-name">星空 TrekTent · 三季</div>
@@ -405,9 +329,9 @@
           </div>
         </div>
 
-        <!-- 配件系列 -->
-        <div class="product-card fade-in fade-in-delay-2" data-category="accessories">
-          <div class="product-img" style="background:linear-gradient(135deg,#141414,#202020)">🔧</div>
+        <!-- 14. 配件系列 -->
+        <div class="product-card fade-in fade-in-delay-1" data-category="accessories">
+          <img class="product-img" src="series-imgs/配件.png" alt="配件系列">
           <div class="product-body">
             <div class="product-series">配件系列</div>
             <div class="product-name">配件套装 Essentials</div>
@@ -419,6 +343,25 @@
             </div>
             <div class="product-foot">
               <div class="product-price"><strong>¥180</strong> <span data-i18n="price_from">起</span></div>
+              <a href="contact.html" class="product-link" data-i18n="product_inquiry">咨询定价 →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 15. 收纳包系列 -->
+        <div class="product-card fade-in fade-in-delay-2" data-category="storage">
+          <img class="product-img" src="series-imgs/收纳.png" alt="收纳包系列">
+          <div class="product-body">
+            <div class="product-series">收纳包系列</div>
+            <div class="product-name">旅途 PackCube · 压缩</div>
+            <div class="product-desc-text">防水压缩收纳袋，有效减少50%收纳体积，分类存储更便捷。</div>
+            <div class="product-specs">
+              <div class="product-spec-item"><strong>通用</strong><span>适用</span></div>
+              <div class="product-spec-item"><strong>50g</strong><span>重量</span></div>
+              <div class="product-spec-item">防泼水</div>
+            </div>
+            <div class="product-foot">
+              <div class="product-price"><strong>¥48</strong> <span data-i18n="price_from">起</span></div>
               <a href="contact.html" class="product-link" data-i18n="product_inquiry">咨询定价 →</a>
             </div>
           </div>
