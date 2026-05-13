@@ -1229,9 +1229,9 @@ ul, ol { list-style: none; }
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  padding: 12px 0;
+  padding: 12px 0 0;
   border-top: 1px solid var(--border);
-  margin-bottom: 16px;
+  margin-bottom: 0;
 }
 .product-spec-item {
   width: calc(33.333% - 8px);
