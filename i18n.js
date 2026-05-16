@@ -11,7 +11,7 @@ const translations = {
   nav_home:          { zh: '首页',     en: 'Home' },
   nav_products:      { zh: '产品中心', en: 'Products' },
   nav_about:         { zh: '关于我们', en: 'About Us' },
-  nav_contact:       { zh: '联系我们', en: 'Contact' },
+  nav_contact:       { zh: '会员登录', en: 'Login' },
   nav_cta:           { zh: '立即咨询', en: 'Inquire Now' },
 
   footer_tagline:    { zh: '二十年专注专业睡袋研发与制造，以极致工艺守护每一夜的温暖。',
@@ -306,7 +306,7 @@ const translations = {
   products_cta_hl:   { zh: '我们来定制',          en: 'We\'ll Customize It' },
   products_cta_desc: { zh: '告诉我们您的需求，专业团队为您量身定制解决方案。',
                        en: 'Tell us your requirements, and our professional team will tailor the solution for you.' },
-  products_cta_btn:  { zh: '联系我们', en: 'Contact Us' },
+  products_cta_btn:  { zh: '会员登录', en: 'Login' },
 
   /* ══════════════════════════════════════
      联系页 (contact.html)
