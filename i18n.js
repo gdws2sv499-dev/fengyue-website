@@ -325,11 +325,11 @@ const translations = {
   contact_email_label:  { zh: '商务邮箱',  en: 'Business Email' },
   contact_email_sub:    { zh: '24小时内回复', en: 'Reply within 24 hours' },
   contact_addr_label:   { zh: '工厂地址',  en: 'Factory Address' },
-  contact_addr_value:   { zh: '江苏省XX市XX区峰悦工业园', en: 'FENGYUE Industrial Park, XX District, XX City, Jiangsu' },
+  contact_addr_value:   { zh: '江苏省丹阳市运河镇', en: 'Yunhe Town, Danyang City, Jiangsu' },
   contact_addr_sub:     { zh: '欢迎预约参观工厂', en: 'Factory visits welcome by appointment' },
   contact_wechat_label: { zh: '微信客服',  en: 'WeChat Support' },
   contact_wechat_sub:   { zh: '扫码添加企业微信', en: 'Scan to add enterprise WeChat' },
-  contact_map_text:     { zh: '江苏省峰悦工业园', en: 'FENGYUE Industrial Park, Jiangsu' },
+  contact_map_text:     { zh: '江苏省丹阳市运河镇', en: 'Yunhe Town, Danyang City, Jiangsu' },
   contact_map_loading:  { zh: '地图加载中…', en: 'Loading map…' },
 
   form_title:        { zh: '发送询盘',    en: 'Send Inquiry' },
