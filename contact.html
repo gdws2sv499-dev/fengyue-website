@@ -43,103 +43,49 @@
   <section class="page-hero">
     <div class="container">
       <div class="page-hero-content">
-        <div class="page-hero-eyebrow" data-i18n="contact_eyebrow">联系我们</div>
-        <h1 class="page-hero-title"><span data-i18n="contact_h1_a">让我们</span><br><span class="hl" data-i18n="contact_h1_b">开始合作</span></h1>
-        <p class="page-hero-desc" data-i18n="contact_desc">
-          无论是产品咨询、批量采购还是 OEM/ODM 定制，
-          我们的专业团队将在24小时内响应您的需求。
+        <div class="page-hero-eyebrow">会员服务</div>
+        <h1 class="page-hero-title"><span>欢迎</span><br><span class="hl">登录账户</span></h1>
+        <p class="page-hero-desc">
+          登录后享受专属价格、订单跟踪及更多会员权益。
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ── 联系内容 ── -->
+  <!-- ── 登录内容 ── -->
   <section class="section">
     <div class="container">
-      <div class="contact-grid">
-
-        <!-- 左侧信息 -->
-        <div class="fade-in">
-          <div class="section-label" style="margin-bottom:24px" data-i18n="contact_info_label">联系方式</div>
-          <div class="contact-info-cards">
-            <div class="contact-card">
-              <div class="contact-card-icon">📞</div>
-              <div>
-                <div class="contact-card-label" data-i18n="contact_phone_label">销售热线</div>
-                <div class="contact-card-value">0086-511-86451188</div>
-                <div class="contact-card-sub" data-i18n="contact_phone_sub">工作日 09:00–18:00</div>
-              </div>
-            </div>
-            <div class="contact-card">
-              <div class="contact-card-icon">✉️</div>
-              <div>
-                <div class="contact-card-label" data-i18n="contact_email_label">商务邮箱</div>
-                <div class="contact-card-value">506466936@qq.com</div>
-                <div class="contact-card-sub" data-i18n="contact_email_sub">24小时内回复</div>
-              </div>
-            </div>
-            <div class="contact-card">
-              <div class="contact-card-icon">📍</div>
-              <div>
-                <div class="contact-card-label" data-i18n="contact_addr_label">工厂地址</div>
-                <div class="contact-card-value" data-i18n="contact_addr_value">江苏省丹阳市运河镇</div>
-                <div class="contact-card-sub" data-i18n="contact_addr_sub">欢迎预约参观工厂</div>
-              </div>
-            </div>
-
-        </div>
-
-        <!-- 右侧表单 -->
-        <div class="contact-form-wrap fade-in fade-in-delay-1">
-          <div id="formContainer">
-            <div class="form-title" data-i18n="form_title">发送询盘</div>
-            <div class="form-subtitle" data-i18n="form_subtitle">填写以下信息，我们将在24小时内联系您</div>
-            <form id="contactForm">
-              <div class="form-row">
-                <div class="form-group">
-                  <label data-i18n="form_name">姓名 *</label>
-                  <input type="text" data-i18n-ph="form_name_ph" placeholder="您的姓名" required>
-                </div>
-                <div class="form-group">
-                  <label data-i18n="form_company">公司名称</label>
-                  <input type="text" data-i18n-ph="form_company_ph" placeholder="公司/品牌名称">
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label data-i18n="form_phone">联系电话 *</label>
-                  <input type="tel" placeholder="+86 138 0000 0000" required>
-                </div>
-                <div class="form-group">
-                  <label data-i18n="form_email">电子邮箱</label>
-                  <input type="email" placeholder="your@email.com">
-                </div>
-              </div>
-              <div class="form-group">
-                <label data-i18n="form_type">咨询类型</label>
-                <select>
-                  <option value="" data-i18n="form_type_ph">请选择咨询类型</option>
-                  <option data-i18n="form_type_1">产品询价</option>
-                  <option data-i18n="form_type_2">批量采购</option>
-                  <option data-i18n="form_type_3">OEM 代工定制</option>
-                  <option data-i18n="form_type_4">ODM 设计定制</option>
-                  <option data-i18n="form_type_5">其他</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label data-i18n="form_message">留言内容 *</label>
-                <textarea data-i18n-ph="form_message_ph" placeholder="请详细描述您的需求，例如产品型号、数量、温区要求等..." required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" data-i18n="form_submit">
-                提交询盘
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-              </button>
-            </form>
+      <div class="login-wrap fade-in">
+        <div class="login-card">
+          <div class="login-header">
+            <div class="login-icon">👤</div>
+            <h2>会员登录</h2>
+            <p>请输入您的账户信息登录</p>
           </div>
-          <div class="form-success" id="formSuccess">
-            <div class="success-icon">✓</div>
-            <h3 data-i18n="form_success_h">询盘已发送！</h3>
-            <p data-i18n="form_success_p">感谢您的咨询，我们将在24小时内通过电话或邮件与您联系。</p>
+          <form id="loginForm">
+            <div class="form-group">
+              <label>会员账号 / 邮箱</label>
+              <input type="text" placeholder="请输入账号或邮箱" required>
+            </div>
+            <div class="form-group">
+              <label>密码</label>
+              <input type="password" placeholder="请输入密码" required>
+            </div>
+            <div class="login-options">
+              <label class="login-remember">
+                <input type="checkbox">
+                <span>记住登录</span>
+              </label>
+              <a href="#" class="login-forget">忘记密码？</a>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
+              登录
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/></svg>
+            </button>
+          </form>
+          <div class="login-footer">
+            <span>还没有账户？</span>
+            <a href="#">立即注册 →</a>
           </div>
         </div>
       </div>
