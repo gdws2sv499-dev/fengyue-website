@@ -351,10 +351,14 @@ ul, ol { list-style: none; }
   background: #000;
 }
 
-/* 轮播 */
-.hero-slides {
+/* 轮播 → 视频背景 */
+.hero-video {
   position: absolute;
-  top:0; left:0; right:0; bottom:0;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%; min-height: 100%;
+  width: auto; height: auto;
+  object-fit: cover;
   z-index: 0;
 }
 .hero-slide {

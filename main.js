@@ -160,7 +160,8 @@ window.addEventListener('load', () => {
   });
 });
 
-// ── 首页轮播 ────────────────────────────────────────────────
+// ── 首页轮播（已替换为视频背景，逻辑停用）────────────────────
+/*
 const heroSlides = document.getElementById('heroSlides');
 const heroDots = document.getElementById('heroDots');
 
@@ -201,3 +202,4 @@ if (heroSlides && heroDots) {
 
   startSlideshow();
 }
+*/
