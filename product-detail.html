@@ -158,16 +158,24 @@
     .back-bar {
       margin-bottom: 40px;
     }
-    .back-link {
+    .back-btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      font-size: .85rem;
-      color: var(--text2);
-      transition: color .3s;
+      gap: 8px;
+      padding: 10px 22px;
+      background: var(--primary);
+      color: #111;
+      font-size: .9rem;
+      font-weight: 700;
+      border-radius: var(--radius);
+      border: 2px solid var(--primary);
+      transition: all .3s;
     }
-    .back-link:hover { color: var(--primary); }
-    .back-link svg { width: 16px; height: 16px; }
+    .back-btn:hover {
+      background: transparent;
+      color: var(--primary);
+    }
+    .back-btn svg { width: 18px; height: 18px; stroke-width: 2.5; }
 
     @media (max-width: 768px) {
       .variant-grid { grid-template-columns: repeat(2, 1fr); }
@@ -224,8 +232,8 @@
   <section class="section">
     <div class="container">
       <div class="back-bar">
-        <a href="products.html" class="back-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <a href="products.html" class="back-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <path d="M19 12H5M12 5l-7 7 7 7"/>
           </svg>
           返回产品中心
