@@ -154,28 +154,10 @@
     }
     .variant-link:hover { gap: 8px; }
 
-    /* ── 返回导航 ── */
-    .back-bar {
+    /* 详情页筛选栏额外间距 */
+    #detailFilterBar {
       margin-bottom: 40px;
     }
-    .back-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 22px;
-      background: var(--primary);
-      color: #111;
-      font-size: .9rem;
-      font-weight: 700;
-      border-radius: var(--radius);
-      border: 2px solid var(--primary);
-      transition: all .3s;
-    }
-    .back-btn:hover {
-      background: transparent;
-      color: var(--primary);
-    }
-    .back-btn svg { width: 18px; height: 18px; stroke-width: 2.5; }
 
     @media (max-width: 768px) {
       .variant-grid { grid-template-columns: repeat(2, 1fr); }
@@ -231,13 +213,24 @@
   <!-- ── 款式列表 ── -->
   <section class="section">
     <div class="container">
-      <div class="back-bar">
-        <a href="products.html" class="back-btn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M19 12H5M12 5l-7 7 7 7"/>
-          </svg>
-          返回产品中心
-        </a>
+      <!-- 系列筛选栏 -->
+      <div class="filter-bar fade-in" id="detailFilterBar">
+        <button class="filter-btn" data-filter="all" data-i18n="filter_all">全部产品</button>
+        <button class="filter-btn" data-filter="envelope">信封系列</button>
+        <button class="filter-btn" data-filter="hood">戴帽系列</button>
+        <button class="filter-btn" data-filter="mummy">妈咪系列</button>
+        <button class="filter-btn" data-filter="lightweight">轻盈系列</button>
+        <button class="filter-btn" data-filter="military">行军系列</button>
+        <button class="filter-btn" data-filter="twoperson">双人系列</button>
+        <button class="filter-btn" data-filter="down">羽绒系列</button>
+        <button class="filter-btn" data-filter="kids">儿童系列</button>
+        <button class="filter-btn" data-filter="special">特殊系列</button>
+        <button class="filter-btn" data-filter="cover">睡袋套系列</button>
+        <button class="filter-btn" data-filter="pillow">枕头</button>
+        <button class="filter-btn" data-filter="quilt">被子&amp;毯子</button>
+        <button class="filter-btn" data-filter="tent">帐篷系列</button>
+        <button class="filter-btn" data-filter="accessories">配件</button>
+        <button class="filter-btn" data-filter="storage">收纳包</button>
       </div>
 
       <!-- 款式网格 -->
@@ -638,10 +631,30 @@
       });
     }
 
+    // ── 系列筛选栏 ────────────────────────────────────────────────
+    const detailFilterBar = document.getElementById('detailFilterBar');
+    const currentSeries = getSeriesFromURL();
+
+    // 高亮当前系列
+    if (detailFilterBar) {
+      detailFilterBar.querySelectorAll('.filter-btn').forEach(btn => {
+        if (btn.dataset.filter === currentSeries) {
+          btn.classList.add('active');
+        }
+        btn.addEventListener('click', () => {
+          const f = btn.dataset.filter;
+          if (f === 'all') {
+            window.location.href = 'products.html';
+          } else {
+            window.location.href = `product-detail.html?series=${f}`;
+          }
+        });
+      });
+    }
+
     // ── 初始化 ────────────────────────────────────────────────────
-    const seriesId = getSeriesFromURL();
-    renderHero(seriesId);
-    renderVariants(seriesId);
+    renderHero(currentSeries);
+    renderVariants(currentSeries);
   </script>
 </body>
 </html>

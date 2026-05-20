@@ -60,27 +60,29 @@ if (fadeEls.length) {
 const filterBtns = document.querySelectorAll('.filter-btn');
 const productCards = document.querySelectorAll('#productsGrid .product-card');
 
-if (filterBtns.length && productCards.length) {
+if (filterBtns.length) {
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
       const filter = btn.dataset.filter;
 
-      // 筛选产品卡片
-      productCards.forEach(card => {
-        const show = filter === 'all' || card.dataset.category === filter;
-        if (show) {
-          card.style.display = '';
-          card.classList.remove('visible');
-          requestAnimationFrame(() => {
-            requestAnimationFrame(() => card.classList.add('visible'));
+      // 点击"全部产品"→筛选本页卡片
+      if (filter === 'all') {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (productCards.length) {
+          productCards.forEach(card => {
+            card.style.display = '';
+            card.classList.remove('visible');
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => card.classList.add('visible'));
+            });
           });
-        } else {
-          card.style.display = 'none';
         }
-      });
+        return;
+      }
+
+      // 点击系列按钮→跳转详情页
+      window.location.href = `product-detail.html?series=${filter}`;
     });
   });
 }
