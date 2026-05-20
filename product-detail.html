@@ -64,34 +64,6 @@
       line-height: 1.7;
     }
 
-    /* ── 款式筛选栏 ── */
-    .variant-filter {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 40px;
-    }
-    .variant-filter-btn {
-      padding: 8px 18px;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--text2);
-      font-size: .82rem;
-      font-weight: 500;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: all .3s;
-    }
-    .variant-filter-btn:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-    .variant-filter-btn.active {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: var(--primary-on);
-    }
-
     /* ── 款式卡片网格 ── */
     .variant-grid {
       display: grid;
@@ -258,11 +230,6 @@
           </svg>
           返回产品中心
         </a>
-      </div>
-
-      <!-- 筛选栏 -->
-      <div class="variant-filter fade-in" id="variantFilter">
-        <!-- JS 填充：颜色/温度筛选 -->
       </div>
 
       <!-- 款式网格 -->
@@ -622,16 +589,6 @@
       document.title = `${data.name} · 峰悦户外`;
     }
 
-    function renderFilter(seriesId) {
-      const data = SERIES_DATA[seriesId];
-      const temps = [...new Set(data.variants.map(v => v.temp))];
-      let html = `<button class="variant-filter-btn active" data-filter="all">全部</button>`;
-      temps.forEach(t => {
-        html += `<button class="variant-filter-btn" data-filter="${t}">${t}</button>`;
-      });
-      document.getElementById('variantFilter').innerHTML = html;
-    }
-
     function renderVariants(seriesId) {
       const data = SERIES_DATA[seriesId];
       const grid = document.getElementById('variantGrid');
@@ -673,26 +630,9 @@
       });
     }
 
-    // ── 筛选逻辑 ──────────────────────────────────────────────────
-    document.getElementById('variantFilter').addEventListener('click', e => {
-      const btn = e.target.closest('.variant-filter-btn');
-      if (!btn) return;
-      const filter = btn.dataset.filter;
-      document.querySelectorAll('.variant-filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.querySelectorAll('.variant-card').forEach(card => {
-        if (filter === 'all' || card.dataset.temp === filter) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-
     // ── 初始化 ────────────────────────────────────────────────────
     const seriesId = getSeriesFromURL();
     renderHero(seriesId);
-    renderFilter(seriesId);
     renderVariants(seriesId);
   </script>
 </body>
