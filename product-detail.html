@@ -8,7 +8,7 @@
   <style>
     /* ── 详情页专用样式 ── */
     .detail-hero {
-      min-height: 45vh;
+      min-height: 28vh;
       display: flex;
       align-items: flex-end;
       padding-bottom: 60px;
@@ -160,6 +160,7 @@
     }
 
     @media (max-width: 768px) {
+      .detail-hero { min-height: 45vh; }
       .variant-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 480px) {
