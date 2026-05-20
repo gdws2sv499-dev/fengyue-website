@@ -7,61 +7,10 @@
   <link rel="stylesheet" href="style.css">
   <style>
     /* ── 详情页专用样式 ── */
-    .detail-hero {
-      min-height: 28vh;
-      display: flex;
-      align-items: flex-end;
-      padding-bottom: 60px;
-      position: relative;
-      overflow: hidden;
-      background: #000;
-    }
-    .detail-hero-overlay {
-      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      z-index: 1;
-      background: linear-gradient(to bottom,
-        rgba(0,0,0,.3) 0%,
-        rgba(0,0,0,.1) 40%,
-        rgba(0,0,0,.5) 80%,
-        rgba(0,0,0,.9) 100%);
-      pointer-events: none;
-    }
-    .detail-hero-content {
-      position: relative;
-      z-index: 2;
-      padding-top: calc(64px + 40px);
-    }
-    .detail-hero-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: .72rem;
-      font-weight: 600;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--primary);
-      margin-bottom: 12px;
-    }
-    .detail-hero-eyebrow::before {
-      content: '';
-      display: block;
-      width: 28px; height: 2px;
-      background: var(--primary);
-      border-radius: 1px;
-    }
-    .detail-hero-title {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 800;
-      letter-spacing: -.04em;
-      line-height: 1.1;
-      color: var(--white);
-      margin-bottom: 16px;
-    }
-    .detail-hero-desc {
-      font-size: 1rem;
-      color: var(--text2);
-      max-width: 560px;
-      line-height: 1.7;
+
+    /* 详情页筛选栏额外间距 */
+    #detailFilterBar {
+      margin-bottom: 40px;
     }
 
     /* ── 款式卡片网格 ── */
@@ -154,13 +103,7 @@
     }
     .variant-link:hover { gap: 8px; }
 
-    /* 详情页筛选栏额外间距 */
-    #detailFilterBar {
-      margin-bottom: 40px;
-    }
-
     @media (max-width: 768px) {
-      .detail-hero { min-height: 45vh; }
       .variant-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 480px) {
@@ -202,10 +145,10 @@
   </div>
 
   <!-- ── 详情英雄区（动态） ── -->
-  <section class="detail-hero" id="detailHero">
-    <div class="detail-hero-overlay"></div>
+  <section class="page-hero page-hero-fixed" id="detailHero">
+    <div class="page-hero-overlay"></div>
     <div class="container">
-      <div class="detail-hero-content" id="heroContent">
+      <div class="page-hero-content" id="heroContent">
         <!-- JS 填充 -->
       </div>
     </div>
@@ -584,9 +527,9 @@
       const hero = document.getElementById('detailHero');
       hero.style.background = `linear-gradient(135deg, ${data.bgColor} 0%, #0a0a0a 60%)`;
       document.getElementById('heroContent').innerHTML = `
-        <div class="detail-hero-eyebrow">${data.emoji} ${data.name}</div>
-        <h1 class="detail-hero-title">${data.name}<br><span class="hl" style="font-weight:300;font-size:.6em">全部款式</span></h1>
-        <p class="detail-hero-desc">${data.desc}</p>
+        <div class="page-hero-eyebrow">${data.emoji} ${data.name}</div>
+        <h1 class="page-hero-title">${data.name}<br><span class="hl" style="font-weight:300">全部款式</span></h1>
+        <p class="page-hero-desc">${data.desc}</p>
       `;
       document.title = `${data.name} · 峰悦户外`;
     }
