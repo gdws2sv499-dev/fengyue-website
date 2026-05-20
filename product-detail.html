@@ -8,6 +8,15 @@
   <style>
     /* ── 详情页专用样式 ── */
 
+    /* 英雄区背景图片 */
+    .hero-bg-img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
     /* 详情页筛选栏额外间距 */
     #detailFilterBar {
       margin-bottom: 40px;
@@ -146,6 +155,7 @@
 
   <!-- ── 详情英雄区（动态） ── -->
   <section class="page-hero page-hero-fixed" id="detailHero">
+    <img class="hero-bg-img" id="heroBgImg" alt="">
     <div class="page-hero-overlay"></div>
     <div class="container">
       <div class="page-hero-content" id="heroContent">
@@ -313,6 +323,7 @@
         name: '信封系列',
         desc: '适配春夏秋三季，轻量化便携设计，满足城市露营与短途徒步的舒适需求。',
         bgColor: '1a2a1a',
+        bgImage: 'hero-imgs/envelope.jpg',
         slogan: '轻装自在山野随心而眠',
         emoji: '🛏️',
         variants: [
@@ -331,6 +342,7 @@
         name: '戴帽系列',
         desc: '一体式防风帽设计，强化头部保暖性，适配低温环境下的户外睡眠场景。',
         bgColor: '1a1a2a',
+        bgImage: 'hero-imgs/hood.jpg',
         slogan: '帽兜锁温无惧寒风侵袭',
         emoji: '🎿',
         variants: [
@@ -349,6 +361,7 @@
         name: '妈咪系列',
         desc: '人体工学妈咪版型，贴合身体曲线，减少热量流失，为寒冷环境提供高效保暖。',
         bgColor: '1a2a2a',
+        bgImage: 'hero-imgs/mummy.jpg',
         slogan: '环抱锁温贴合每寸暖意',
         emoji: '⛺',
         variants: [
@@ -367,6 +380,7 @@
         name: '轻盈系列',
         desc: '采用高蓬松度填充与轻量化面料，极致压缩体积，是长线徒步与轻量化露营的首选。',
         bgColor: '0a1a0a',
+        bgImage: 'hero-imgs/lightweight.jpg',
         slogan: '轻量出行减负不省温暖',
         emoji: '🪶',
         variants: [
@@ -385,6 +399,7 @@
         name: '行军系列',
         desc: '耐磨抗撕面料搭配高强度锁温结构，适配恶劣环境下的高强度户外与战术场景。',
         bgColor: '1a1a0a',
+        bgImage: 'hero-imgs/military.jpg',
         slogan: '硬核耐用陪你穿越征途',
         emoji: '🎖️',
         variants: [
@@ -403,6 +418,7 @@
         name: '双人系列',
         desc: '双人体型专属空间设计，可拆分可合并，兼顾情侣露营与家庭出行的多样需求。',
         bgColor: '2a1a1a',
+        bgImage: 'hero-imgs/twoperson.jpg',
         slogan: '双人同眠共享山野星夜',
         emoji: '💑',
         variants: [
@@ -421,6 +437,7 @@
         name: '羽绒系列',
         desc: '精选高品质羽绒填充，蓬松度高、保暖性强，专业应对高海拔与极寒环境的户外睡眠。',
         bgColor: '1a1a2a',
+        bgImage: 'hero-imgs/down.jpg',
         slogan: '高蓬羽绒锁牢寒冬暖意',
         emoji: '🦢',
         variants: [
@@ -439,6 +456,7 @@
         name: '儿童系列',
         desc: '儿童专属安全设计，亲肤面料搭配合身剪裁，满足亲子露营中孩子的舒适与安全需求。',
         bgColor: '2a1a2a',
+        bgImage: 'hero-imgs/kids.jpg',
         slogan: '专为孩童守护探索之夜',
         emoji: '🧸',
         variants: [
@@ -457,6 +475,7 @@
         name: '特殊系列',
         desc: '针对极地探险、极限挑战等特殊场景开发，采用顶级配置，提供专业级的极端环境防护。',
         bgColor: '1a0a1a',
+        bgImage: 'hero-imgs/special.jpg',
         slogan: '定制场景适配极限挑战',
         emoji: '🏔️',
         variants: [
@@ -475,6 +494,7 @@
         name: '睡袋套系列',
         desc: '防水防脏睡袋内套，可单独使用也可搭配睡袋，提升户外睡眠的卫生性与耐用性。',
         bgColor: '1a2a2a',
+        bgImage: 'hero-imgs/cover.jpg',
         slogan: '贴心防护延长装备寿命',
         emoji: '🧣',
         variants: [
@@ -493,6 +513,7 @@
         name: '枕头系列',
         desc: '轻量化充气/海绵枕头，可折叠收纳，为户外睡眠提供贴合颈部的舒适支撑。',
         bgColor: '1a1a1a',
+        bgImage: 'hero-imgs/pillow.jpg',
         slogan: '柔软支撑安睡山野之间',
         emoji: '💤',
         variants: [
@@ -511,6 +532,7 @@
         name: '被子&毯子系列',
         desc: '可做睡袋内胆、露营盖毯或居家使用，轻便易携，满足多种户外与日常保暖需求。',
         bgColor: '2a2a1a',
+        bgImage: 'hero-imgs/quilt.jpg',
         slogan: '一毯多用解锁温暖场景',
         emoji: '🧶',
         variants: [
@@ -529,6 +551,7 @@
         name: '帐篷系列',
         desc: '多场景帐篷矩阵，从单人徒步帐到多人露营帐，适配不同人数与环境的户外庇护需求。',
         bgColor: '0a1a1a',
+        bgImage: 'hero-imgs/tent.jpg',
         slogan: '撑起天地安放山野梦想',
         emoji: '⛺',
         variants: [
@@ -547,6 +570,7 @@
         name: '配件系列',
         desc: '涵盖睡袋修补、清洁、维护等各类配件，为你的户外装备提供全方位的辅助支持。',
         bgColor: '1a1a1a',
+        bgImage: 'hero-imgs/accessories.jpg',
         slogan: '细节加持提升户外体验',
         emoji: '🔧',
         variants: [
@@ -565,6 +589,7 @@
         name: '收纳包系列',
         desc: '高强度耐磨收纳袋，适配不同规格睡袋与装备，压缩体积同时提供可靠防护。',
         bgColor: '1a2a1a',
+        bgImage: 'hero-imgs/storage.jpg',
         slogan: '有序收纳打包山野温暖',
         emoji: '🎒',
         variants: [
@@ -594,7 +619,10 @@
         return;
       }
       const hero = document.getElementById('detailHero');
-      hero.style.background = `linear-gradient(135deg, ${data.bgColor} 0%, #0a0a0a 60%)`;
+      const bgImg = document.getElementById('heroBgImg');
+      if (bgImg && data.bgImage) {
+        bgImg.src = data.bgImage;
+      }
       document.getElementById('heroContent').innerHTML = `
         <h1 class="page-hero-title">${data.name}<br><span class="hl" style="font-weight:300">${data.slogan}</span></h1>
         <p class="page-hero-desc">${data.desc}</p>
