@@ -980,6 +980,7 @@ ul, ol { list-style: none; }
   position: relative;
   z-index: 2;
   padding-top: calc(var(--nav-h) + 55px);
+  text-align: left;
 }
 .page-hero-eyebrow {
   font-size: .75rem;
