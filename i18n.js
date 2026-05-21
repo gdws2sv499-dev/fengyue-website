@@ -214,7 +214,7 @@ const translations = {
   page_title_products: { zh: '产品中心 · 峰悦户外',
                          en: 'Products · FENGYUE Outdoor' },
   products_eyebrow:  { zh: '产品中心',    en: 'Products' },
-  products_h1:      { zh: '每款睡袋<br><span class="hl">都是极致对生活的致敬</span>', 
+  products_h1:      { zh: '每款睡袋<br><span class="hl">都是对生活极致的致敬</span>', 
                        en: 'Every Sleeping Bag<br><span class="hl">Is A Tribute To Life</span>' },
   products_desc:     { zh: '覆盖极地探险到休闲露营的全场景产品矩阵，十大系列，满足不同温区、不同场景的专业需求。',
                        en: 'A complete product matrix covering polar expeditions to casual camping, four series meeting the professional needs of different temperature zones and scenarios.' },
