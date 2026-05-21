@@ -959,7 +959,7 @@ ul, ol { list-style: none; }
 
 /* ── 产品页固定背景 ── */
 .page-hero-fixed {
-  background: url('series-imgs/羽绒_bg.jpg') center center / cover no-repeat;
+  background: url('hero-imgs/all-products.jpg') center center / cover no-repeat;
 }
 
 /* ── 渐变遮罩层 ── */
