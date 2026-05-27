@@ -1255,7 +1255,6 @@ ul, ol { list-style: none; }
   font-size: .88rem;
   font-weight: 700;
   color: var(--text);
-  min-height: 2.8rem;
 }
 .product-foot {
   display: flex;
