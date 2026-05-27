@@ -66,11 +66,17 @@
       color: var(--white);
       margin-bottom: 6px;
     }
+    .variant-size-label {
+      font-size: .7rem;
+      color: #999;
+      font-weight: 400;
+      margin-left: 6px;
+    }
     .variant-size {
       font-size: .75rem;
       color: var(--primary);
       font-weight: 600;
-      margin-left: 6px;
+      margin-left: 2px;
     }
     .variant-temp {
       font-size: .8rem;
@@ -662,7 +668,7 @@
               </div>`
           }
           <div class="variant-body">
-            <div class="variant-name">${v.name}${v.size ? ` <span class="variant-size">${v.size}</span>` : ''}</div>
+            <div class="variant-name">${v.name}${v.size ? ` <span class="variant-size-label">尺寸</span><span class="variant-size">${v.size}</span>` : ''}</div>
             <div class="variant-temp">${v.temp}</div>
             <div class="variant-specs">
               ${v.specs.map(s => `<span class="variant-spec-tag">${s}</span>`).join('')}
