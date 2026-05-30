@@ -135,8 +135,8 @@ const translations = {
   about_eyebrow:     { zh: '关于峰悦',  en: 'About FENGYUE' },
   about_h1_a:        { zh: '为快乐而生', en: 'Built for Joy' },
   about_h1_b:        { zh: '为你而造',  en: 'Made for You' },
-  about_desc:        { zh: '1999年创立于江苏，二十年来专注专业睡袋的研发与制造。我们相信，每一次野外的夜晚，都值得拥有最可靠的温暖。',
-                       en: 'Founded in Jiangsu in 1999, twenty years dedicated to professional sleeping bag R&D and manufacturing. We believe every night in the wild deserves the most reliable warmth.' },
+  about_desc:        { zh: '1999年创立于江苏，数十年来专注专业睡袋的研发与制造。我们相信，每一次野外的夜晚，都值得拥有最可靠的温暖。',
+                       en: 'Founded in Jiangsu in 1999, decades dedicated to professional sleeping bag R&D and manufacturing. We believe every night in the wild deserves the most reliable warmth.' },
 
   brand_label:       { zh: '品牌故事',  en: 'Brand Story' },
   brand_h2_a:        { zh: '从一针一线', en: 'From Every Stitch' },
