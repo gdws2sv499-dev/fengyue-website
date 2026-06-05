@@ -959,7 +959,7 @@ ul, ol { list-style: none; }
 
 /* ── 产品页固定背景 ── */
 .page-hero-fixed {
-  background: url('hero-imgs/all-products.jpg') center center / cover no-repeat;
+  background: url('https://fengyue-assets-1410441639.cos.ap-hongkong.myqcloud.com/hero-imgs/all-products.jpg') center center / cover no-repeat;
 }
 
 /* ── 渐变遮罩层 ── */
