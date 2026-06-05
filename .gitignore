@@ -1,19 +1,6 @@
-# 忽略大文件和临时文件
-*.jpg
-*.jpeg
-*.png
-*.gif
-*.svg
-*.ico
-*.webp
-
 # macOS 系统文件
 .DS_Store
 
 # 编辑器缓存
 .vscode/
 .idea/
-
-# 编译产物
-*.min.js
-*.min.css
