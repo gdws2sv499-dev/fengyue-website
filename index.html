@@ -41,15 +41,9 @@
 
   <!-- ── 英雄区 ── -->
   <section class="hero">
-    <video class="hero-video" muted loop playsinline preload="none" poster="hero-imgs/cover.jpg">
+    <video class="hero-video" autoplay muted loop playsinline>
       <source src="hero-video.mp4" type="video/mp4">
     </video>
-    <div class="hero-play-btn" id="heroPlayBtn" onclick="playHeroVideo()">
-      <svg viewBox="0 0 80 80" fill="none">
-        <circle cx="40" cy="40" r="36" fill="rgba(0,0,0,0.6)" stroke="white" stroke-width="2"/>
-        <polygon points="32,24 32,56 60,40" fill="white"/>
-      </svg>
-    </div>
     <div class="hero-overlay"></div>
     <div class="hero-content fade-in">
       <div class="hero-eyebrow">
@@ -91,15 +85,15 @@
         <div class="footer-brand">
           <div class="footer-qr">
             <div class="footer-qr-item">
-              <img src="contacts/whatsapp.png" alt="WhatsApp" loading="lazy">
+              <img src="contacts/whatsapp.png" alt="WhatsApp">
               <span>WhatsApp</span>
             </div>
             <div class="footer-qr-item">
-              <img src="contacts/wechat.png" alt="微信" loading="lazy">
+              <img src="contacts/wechat.png" alt="微信">
               <span>微信</span>
             </div>
             <div class="footer-qr-item">
-              <img src="contacts/contact.png" alt="联系方式" loading="lazy">
+              <img src="contacts/contact.png" alt="联系方式">
               <span>联系方式</span>
             </div>
           </div>
@@ -119,19 +113,5 @@
 
   <script src="i18n.js"></script>
   <script src="main.js"></script>
-  <script>
-    function playHeroVideo() {
-      const v = document.querySelector('.hero-video');
-      if (v) v.play();
-    }
-    document.addEventListener('DOMContentLoaded', function() {
-      const v = document.querySelector('.hero-video');
-      const btn = document.getElementById('heroPlayBtn');
-      if (!v || !btn) return;
-      v.addEventListener('play', function() { btn.classList.add('hidden'); });
-      v.addEventListener('pause', function() { btn.classList.remove('hidden'); });
-      v.addEventListener('ended', function() { btn.classList.remove('hidden'); });
-    });
-  </script>
 </body>
 </html>
